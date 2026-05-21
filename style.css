@@ -67,13 +67,17 @@ p { color: var(--ink-2); margin: 0 0 1rem; }
 
 .brand-mark {
   display: inline-block;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--brand-1) 0%, var(--brand-2) 100%);
   box-shadow: var(--shadow-sm);
 }
-.brand-mark-sm { width: 20px; height: 20px; border-radius: 6px; }
+
+.footer-mark {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+}
 
 .brand-name { font-size: 1.05rem; }
 
@@ -105,7 +109,48 @@ p { color: var(--ink-2); margin: 0 0 1rem; }
   border-bottom: 1px solid var(--line);
 }
 
-.hero-inner { max-width: var(--maxw); margin: 0 auto; }
+.hero-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-visual { order: -1; }
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-icon-wrap {
+  position: relative;
+  width: min(360px, 80%);
+  aspect-ratio: 1 / 1;
+}
+
+.hero-icon-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(circle at 50% 50%, rgba(139, 91, 255, 0.28) 0%, rgba(91, 108, 255, 0.18) 35%, transparent 70%);
+  filter: blur(20px);
+  z-index: 0;
+}
+
+.hero-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 22%;
+  box-shadow: 0 20px 60px rgba(91, 108, 255, 0.35), 0 6px 16px rgba(14, 16, 39, 0.12);
+  z-index: 1;
+}
 
 .eyebrow {
   display: inline-block;
