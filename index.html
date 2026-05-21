@@ -3,157 +3,307 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Synapse — the dating app built for healthcare workers. Verified credentials, schedule-aware matching, and a community that understands your hours." />
-  <meta name="theme-color" content="#5B6CFF" />
+  <meta name="description" content="Synapse is a verified dating app for healthcare workers. Credentials checked against state boards and the NPI registry. Schedule-aware matching for shift work." />
+  <meta name="theme-color" content="#FAF8F4" />
   <title>Synapse — Dating for Healthcare Workers</title>
   <link rel="icon" type="image/png" href="og-image.png" />
   <link rel="apple-touch-icon" href="og-image.png" />
   <meta property="og:title" content="Synapse — Dating for Healthcare Workers" />
-  <meta property="og:description" content="Verified credentials, schedule-aware matching, and a community that understands your hours." />
+  <meta property="og:description" content="A verified dating community for clinicians and care teams. Credentials checked. Schedules respected." />
   <meta property="og:image" content="https://synapsematches.com/og-image.png" />
   <meta property="og:url" content="https://synapsematches.com" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a href="#" class="brand" aria-label="Synapse home">
+      <a href="#top" class="brand" aria-label="Synapse home">
         <img src="og-image.png" alt="" class="brand-mark" aria-hidden="true" />
-        <span class="brand-name">Synapse</span>
+        <span>Synapse</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#why">Why Synapse</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#trust">Verification</a></li>
+        <li><a href="#plus">Synapse+</a></li>
+        <li><a class="nav-cta" href="mailto:synapse@synapsematches.com?subject=Synapse%20launch%20updates">Get updates</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">Built for healthcare</p>
-          <h1 id="hero-title">Dating that finally understands your schedule.</h1>
+          <p class="eyebrow">For clinicians and care teams</p>
+          <h1 id="hero-title">Dating, designed for <span class="accent">your hours.</span></h1>
           <p class="lede">
-            Synapse is a verified dating community for nurses, physicians, therapists, and the people who keep
+            A verified community for nurses, physicians, therapists, and the people who keep
             hospitals running. Credentials checked. Schedules respected. Conversations that go somewhere.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#contact">Get launch updates</a>
-            <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+            <a class="btn btn-primary btn-arrow" href="mailto:synapse@synapsematches.com?subject=Synapse%20launch%20updates">Get launch updates</a>
+            <a class="btn btn-ghost" href="#how">See how it works</a>
           </div>
-          <p class="hero-meta">Coming to iOS — TestFlight beta in progress.</p>
+          <p class="hero-meta">In TestFlight beta. Coming to the App Store.</p>
         </div>
         <div class="hero-visual" aria-hidden="true">
-          <div class="hero-icon-wrap">
-            <img src="og-image.png" alt="" class="hero-icon" />
+          <div class="hero-glow"></div>
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <div class="hero-card-mark">
+                <img src="logo-mark-white.svg" alt="" />
+              </div>
+              <div class="hero-card-body">
+                <p class="hero-card-label">Today's overlap</p>
+                <h2 class="hero-card-title">Three matches share your Thursday off.</h2>
+                <div class="hero-card-stack">
+                  <div class="hero-card-row">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    <span><strong>Verified RN</strong> · Boston</span>
+                  </div>
+                  <div class="hero-card-row">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    <span>Both off-shift Thu evening</span>
+                  </div>
+                  <div class="hero-card-row">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Coffee at Beacon Hill · 12 min away</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="features" aria-labelledby="features-title">
+    <section class="section section-paper" id="why" aria-labelledby="why-title">
       <div class="section-inner">
-        <h2 id="features-title">Why Synapse</h2>
-        <div class="grid grid-3">
-          <article class="card">
-            <h3>Verified credentials</h3>
-            <p>
-              Every profile is verified against state licensing boards and the NPI registry. No catfishing,
-              no "I work in healthcare" hand-waving — just confirmed clinicians and care teams.
-            </p>
+        <div class="section-head">
+          <p class="eyebrow">Two pillars</p>
+          <h2 id="why-title">Built around the two things every dating app misses for healthcare.</h2>
+        </div>
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Credentialed, not claimed.</h3>
+            <p>Every clinician profile is verified against the NPI registry and license records. Identity is confirmed by matching a government ID to a live selfie. "I work in healthcare" doesn't cut it here.</p>
+            <dl class="pillar-detail">
+              <div class="kv"><dt>Clinicians</dt><dd>NPI registry lookup</dd></div>
+              <div class="kv"><dt>Licensed roles</dt><dd>State license photo review</dd></div>
+              <div class="kv"><dt>Students</dt><dd>.edu email verification</dd></div>
+              <div class="kv"><dt>Identity</dt><dd>ID-to-selfie match</dd></div>
+            </dl>
           </article>
-          <article class="card">
-            <h3>Schedule-aware matching</h3>
-            <p>
-              Share your call schedule and off-days. Synapse surfaces matches whose free time actually
-              overlaps with yours — so the first date isn't three weeks out.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Built for shift workers</h3>
-            <p>
-              AI-suggested date times based on both schedules. Curated date spot suggestions near a
-              midpoint. A community that knows what "post-call" means.
-            </p>
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Your calendar, not theirs.</h3>
+            <p>Mark your on-call days, night shifts, and golden weekends. Synapse surfaces matches whose free time actually overlaps with yours, then suggests times you're both genuinely free.</p>
+            <dl class="pillar-detail">
+              <div class="kv"><dt>Schedule</dt><dd>On-call, off-shift, golden weekends</dd></div>
+              <div class="kv"><dt>Matching</dt><dd>Prioritized by real overlap</dd></div>
+              <div class="kv"><dt>Date times</dt><dd>AI-suggested from both calendars</dd></div>
+            </dl>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="how-it-works" aria-labelledby="how-title">
+    <section class="section section-cream" id="how" aria-labelledby="how-title">
       <div class="section-inner">
-        <h2 id="how-title">How it works</h2>
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-title">Four steps from sign-up to a first date that actually happens.</h2>
+        </div>
         <ol class="steps">
           <li>
-            <span class="step-num">1</span>
+            <span class="step-num">01</span>
             <div>
-              <h3>Verify once</h3>
-              <p>
-                Upload your government ID and your healthcare license. AWS Rekognition matches the photo
-                to a selfie; our team confirms credentials against state board records.
-              </p>
+              <h3>Verify your license and your face.</h3>
+              <p>Upload a government ID and a quick selfie — compared by AWS Rekognition's facial similarity model. For clinicians, we then check your NPI and state license. Most profiles clear within 24 hours; borderline cases are reviewed by a person.</p>
             </div>
           </li>
           <li>
-            <span class="step-num">2</span>
+            <span class="step-num">02</span>
             <div>
-              <h3>Set your schedule</h3>
-              <p>
-                Mark your typical on-call days and off-shifts. Synapse uses this to prioritize matches
-                whose availability overlaps with yours.
-              </p>
+              <h3>Build a profile that respects the work.</h3>
+              <p>Photos, prompts, and what kind of relationship you're looking for. Sign in with Apple, Google, or email — your credentials show up as a verified badge, not on the front of your profile.</p>
             </div>
           </li>
           <li>
-            <span class="step-num">3</span>
+            <span class="step-num">03</span>
             <div>
-              <h3>Match and meet</h3>
-              <p>
-                When there's a mutual signal, you'll get AI-suggested date times and venue ideas
-                near a comfortable midpoint. From there, it's your call.
-              </p>
+              <h3>Mark your schedule.</h3>
+              <p>Add the days you're typically on-call, your off-shifts, and the weekends you're free. Synapse uses your schedule to prioritize matches with real overlap — not a 7pm Tuesday you'll never make.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">04</span>
+            <div>
+              <h3>Match, then meet.</h3>
+              <p>When there's a mutual signal, you get AI-suggested icebreakers and venue ideas near a comfortable midpoint between you, all timed to days you're both genuinely free. From there, it's your call.</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
+    <section class="section section-ink" id="trust" aria-labelledby="trust-title">
       <div class="section-inner">
-        <h2 id="about-title">About Synapse</h2>
+        <div class="section-head">
+          <p class="eyebrow">Verification</p>
+          <h2 id="trust-title">Healthcare-grade trust, by default.</h2>
+          <p>The verification flow is the whole point. Here's exactly what we check and how.</p>
+        </div>
+        <div class="trust-grid">
+          <div>
+            <ul class="trust-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <div>
+                  <strong>NPI registry lookup</strong>
+                  <span>Clinician NPIs are validated against the NPPES public registry maintained by CMS, including taxonomy, license number, and active status.</span>
+                </div>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <div>
+                  <strong>State board license checks</strong>
+                  <span>Nursing and other professional licenses are cross-referenced with the issuing state's board record. Expired or revoked licenses don't clear.</span>
+                </div>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <div>
+                  <strong>Identity match</strong>
+                  <span>A government photo ID is compared to a live selfie using AWS Rekognition's facial similarity model. High-confidence matches auto-approve; borderline cases are reviewed by a person.</span>
+                </div>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <div>
+                  <strong>Encrypted at rest, access-controlled</strong>
+                  <span>IDs and verification selfies are stored encrypted and access-controlled, retained only as long as needed to support your verified status.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="trust-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <div>
+                  <strong>Profile photos stay separate from ID</strong>
+                  <span>Your name on the app must match the name on your credential. Your verification selfie and government ID are stored separately and never appear on your profile.</span>
+                </div>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <div>
+                  <strong>Specific feedback on rejection</strong>
+                  <span>If verification doesn't clear, you'll get a structured reason (clinical credential, identity match, or both) so you know exactly what to re-submit.</span>
+                </div>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <div>
+                  <strong>Roles we verify</strong>
+                  <span>Physicians, residents, nurses, NPs, PAs, pharmacists, PTs, OTs, therapists, and healthcare students — each by the appropriate credential (NPI, state license, or .edu email).</span>
+                </div>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <div>
+                  <strong>Delete on request</strong>
+                  <span>You can delete your account from inside the app at any time. We remove your profile, messages, photos, and verification documents within 30 days, save where law requires retention.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section plus" id="plus" aria-labelledby="plus-title">
+      <div class="section-inner">
+        <div class="plus-card">
+          <div>
+            <span class="plus-tag">Synapse+</span>
+            <h2 id="plus-title">More room to find the right person.</h2>
+            <p>An optional subscription for when you want more. No manipulation, no engagement loops — just useful headroom.</p>
+            <ul class="plus-features">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Triple your daily matches — 30 a day instead of 10.</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>See who's already liked you.</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Bonus Sparks — a way to stand out on the profiles that matter.</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Advanced filters on specialty, schedule shape, and distance.</span>
+              </li>
+            </ul>
+          </div>
+          <aside class="plus-price" aria-label="Synapse+ pricing">
+            <div class="amount"><sup>$</sup>9.99</div>
+            <span class="period">per month, cancel anytime</span>
+            <a class="btn btn-primary" href="mailto:synapse@synapsematches.com?subject=Synapse%2B%20launch">Notify me at launch</a>
+            <p class="fine">Billed through the App Store. Manage or cancel from your device's Subscriptions settings.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="about" aria-labelledby="about-title">
+      <div class="section-inner section-prose">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">A small team, built from inside the system.</h2>
         <p class="about-body">
-          Synapse is built by a small team with first-hand experience inside the healthcare system. We saw
-          friends and partners struggle with dating apps that didn't account for 12-hour shifts, rotating
-          call, or the verification gap that lets non-clinicians claim a credential they don't hold.
-          We're building the dating app we wished existed during residency.
+          Synapse is built by a small team with first-hand experience inside the healthcare system. We watched
+          friends and partners struggle with dating apps that didn't account for 12-hour shifts, rotating call,
+          or the verification gap that lets non-clinicians claim a credential they don't hold.
         </p>
         <p class="about-body">
-          Operated by Synapse Connect — see contact details below for partnership, press, and compliance
-          inquiries.
+          We're building the dating app we wished existed during residency. Calm, credible, and respectful of
+          time you don't have much of.
         </p>
       </div>
     </section>
 
-    <section class="section section-alt" id="contact" aria-labelledby="contact-title">
+    <section class="section section-cream" id="contact" aria-labelledby="contact-title">
       <div class="section-inner">
-        <h2 id="contact-title">Contact</h2>
-        <dl class="contact-list">
-          <div>
+        <div class="section-head">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Get in touch.</h2>
+        </div>
+        <dl class="contact-grid">
+          <div class="contact-item">
             <dt>General</dt>
             <dd><a href="mailto:synapse@synapsematches.com">synapse@synapsematches.com</a></dd>
           </div>
-          <div>
+          <div class="contact-item">
             <dt>Press &amp; partnerships</dt>
-            <dd><a href="mailto:synapse@synapsematches.com">synapse@synapsematches.com</a></dd>
+            <dd><a href="mailto:synapse@synapsematches.com?subject=Press%20inquiry">synapse@synapsematches.com</a></dd>
           </div>
-          <div>
+          <div class="contact-item">
             <dt>Privacy &amp; compliance</dt>
-            <dd><a href="mailto:synapse@synapsematches.com">synapse@synapsematches.com</a></dd>
+            <dd><a href="mailto:synapse@synapsematches.com?subject=Privacy%20inquiry">synapse@synapsematches.com</a></dd>
           </div>
         </dl>
       </div>
@@ -162,16 +312,35 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <p class="footer-brand">
-        <img src="og-image.png" alt="" class="footer-mark" aria-hidden="true" />
-        Synapse Connect
-      </p>
-      <ul class="footer-links">
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="mailto:synapse@synapsematches.com">Contact</a></li>
-      </ul>
-      <p class="footer-meta">&copy; 2026 Synapse Connect. All rights reserved.</p>
+      <div>
+        <p class="footer-brand">
+          <img src="og-image.png" alt="" class="footer-mark" aria-hidden="true" />
+          Synapse Connect
+        </p>
+        <p class="footer-tag">A verified dating community for the people who keep healthcare running.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#why">Why Synapse</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#trust">Verification</a></li>
+          <li><a href="#plus">Synapse+</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="mailto:synapse@synapsematches.com">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Synapse Connect. All rights reserved.</p>
+      <p>Made with care for the people who care.</p>
     </div>
   </footer>
 </body>

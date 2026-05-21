@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="legal-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Synapse</title>
   <link rel="icon" type="image/png" href="og-image.png" />
   <link rel="apple-touch-icon" href="og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,21 +16,22 @@
     <nav class="nav" aria-label="Primary">
       <a href="index.html" class="brand">
         <img src="og-image.png" alt="" class="brand-mark" aria-hidden="true" />
-        <span class="brand-name">Synapse</span>
+        <span>Synapse</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#features">Features</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#why">Why Synapse</a></li>
+        <li><a href="index.html#how">How it works</a></li>
+        <li><a href="index.html#trust">Verification</a></li>
+        <li><a class="nav-cta" href="mailto:synapse@synapsematches.com?subject=Synapse%20launch%20updates">Get updates</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="section">
-    <div class="section-inner" style="max-width: 760px;">
+  <main>
+    <div class="section-inner section-prose">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p><em>Last updated: May 2026</em></p>
+      <p class="legal-meta">Last updated: May 2026</p>
 
       <p>
         Synapse Connect ("Synapse," "we," "us") operates the Synapse dating application and this website.
@@ -57,17 +61,19 @@
       <h2>Verification data</h2>
       <p>
         Identity verification is performed using AWS Rekognition for face matching. Healthcare credentials
-        are checked against publicly available state board and NPI registry data. Government IDs and
-        verification selfies are stored encrypted and access-controlled; they are retained only as long as
-        required to support your verified status and to comply with audit obligations.
+        are checked against publicly available state board records and the NPI registry (NPPES) maintained by
+        the Centers for Medicare &amp; Medicaid Services. Government IDs and verification selfies are stored
+        encrypted and access-controlled; they are retained only as long as required to support your verified
+        status and to comply with audit obligations.
       </p>
 
       <h2>How we share information</h2>
       <p>
-        We do not sell your personal information. We share information with service providers (cloud
-        hosting, push notifications, payment processing, analytics) under contractual confidentiality and
-        data-use restrictions. We share information with other users only as you direct (your profile,
-        messages, and signals). We may disclose information when required by law.
+        We do not sell your personal information. We share information with service providers (Supabase for
+        application hosting and database, AWS for identity verification, Expo for push notifications,
+        RevenueCat for subscription management, OpenAI for AI-assisted features) under contractual
+        confidentiality and data-use restrictions. We share information with other users only as you direct
+        (your profile, messages, and signals). We may disclose information when required by law.
       </p>
 
       <h2>Your rights</h2>
@@ -87,16 +93,35 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <p class="footer-brand">
-        <img src="og-image.png" alt="" class="footer-mark" aria-hidden="true" />
-        Synapse Connect
-      </p>
-      <ul class="footer-links">
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="mailto:synapse@synapsematches.com">Contact</a></li>
-      </ul>
-      <p class="footer-meta">&copy; 2026 Synapse Connect. All rights reserved.</p>
+      <div>
+        <p class="footer-brand">
+          <img src="og-image.png" alt="" class="footer-mark" aria-hidden="true" />
+          Synapse Connect
+        </p>
+        <p class="footer-tag">A verified dating community for the people who keep healthcare running.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html#why">Why Synapse</a></li>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#trust">Verification</a></li>
+          <li><a href="index.html#plus">Synapse+</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="mailto:synapse@synapsematches.com">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Synapse Connect. All rights reserved.</p>
+      <p>Made with care for the people who care.</p>
     </div>
   </footer>
 </body>
