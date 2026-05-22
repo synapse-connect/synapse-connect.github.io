@@ -298,77 +298,130 @@ h1 .accent {
   max-width: 360px;
   aspect-ratio: 9 / 14;
   background: #fff;
-  border-radius: 32px;
+  border-radius: 24px;
   box-shadow: var(--shadow-lg);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(20, 22, 43, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-card::before {
+.hero-card-photo {
+  position: relative;
+  flex: 0 0 62%;
+  background:
+    radial-gradient(120% 80% at 65% 25%, #F3D5C0 0%, #E8B7A0 38%, #C68F8D 70%, #7E6485 100%);
+}
+
+.hero-card-photo::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(155deg, var(--brand-1) 0%, var(--brand-2) 100%);
-  z-index: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(20, 22, 43, 0.15) 100%);
 }
 
-.hero-card-inner {
-  position: relative;
-  z-index: 1;
-  height: 100%;
+.hero-card-indicators {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  right: 14px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 28px;
+  gap: 4px;
+  z-index: 2;
+}
+
+.hero-card-indicator {
+  flex: 1;
+  height: 3px;
+  border-radius: 1.5px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.hero-card-indicator.is-active {
+  background: #fff;
+}
+
+.hero-card-badge {
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--brand-1);
   color: #fff;
-}
-
-.hero-card-mark {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(20, 22, 43, 0.18), 0 2px 4px rgba(20, 22, 43, 0.10);
-}
-
-.hero-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.hero-card-label {
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  opacity: 0.78;
+  letter-spacing: 0.01em;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(91, 108, 255, 0.35);
 }
 
-.hero-card-title {
-  font-family: var(--serif);
-  font-size: 1.65rem;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-  color: #fff;
-  margin: 0;
+.hero-card-info {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #fff;
 }
 
-.hero-card-row {
+.hero-card-namerow {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 14px;
-  font-size: 0.88rem;
-  backdrop-filter: blur(8px);
+  justify-content: space-between;
 }
-.hero-card-row svg { flex-shrink: 0; }
-.hero-card-row strong { font-weight: 500; }
 
-.hero-card-stack {
-  display: grid;
-  gap: 8px;
+.hero-card-name {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.hero-card-chevron {
+  color: var(--ink-3);
+}
+
+.hero-card-occupation {
+  margin: 2px 0 0;
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+
+.hero-card-location {
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: var(--ink-3);
+}
+
+.hero-card-prompt {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--cream);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.hero-card-prompt-q {
+  margin: 0 0 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--brand-1);
+  letter-spacing: 0.01em;
+}
+
+.hero-card-prompt-a {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink);
 }
 
 .hero-glow {
