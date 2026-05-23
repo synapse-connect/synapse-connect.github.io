@@ -309,15 +309,19 @@ h1 .accent {
 .hero-card-photo {
   position: relative;
   flex: 0 0 62%;
-  background:
-    radial-gradient(120% 80% at 65% 25%, #F3D5C0 0%, #E8B7A0 38%, #C68F8D 70%, #7E6485 100%);
+  background-color: #EADCC9;
+  background-image: url("assets/sarah-profile.jpg");
+  background-size: cover;
+  background-position: center 28%;
+  background-repeat: no-repeat;
 }
 
 .hero-card-photo::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 55%, rgba(20, 22, 43, 0.15) 100%);
+  background: linear-gradient(to bottom, transparent 60%, rgba(20, 22, 43, 0.18) 100%);
+  pointer-events: none;
 }
 
 .hero-card-indicators {
