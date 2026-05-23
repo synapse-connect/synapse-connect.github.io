@@ -311,8 +311,8 @@ h1 .accent {
   flex: 0 0 62%;
   background-color: #EADCC9;
   background-image: url("assets/sarah-profile.jpg");
-  background-size: cover;
-  background-position: center 40%;
+  background-size: 115%;
+  background-position: center 35%;
   background-repeat: no-repeat;
 }
 
