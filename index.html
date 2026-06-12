@@ -31,7 +31,7 @@
         <li><a href="#how">How it works</a></li>
         <li><a href="#trust">Verification</a></li>
         <li><a href="#plus">Synapse+</a></li>
-        <li><a class="nav-cta" href="mailto:synapse@synapsematches.com?subject=Synapse%20launch%20updates">Get updates</a></li>
+        <li><a class="nav-cta" href="#waitlist">Get updates</a></li>
       </ul>
     </nav>
   </header>
@@ -47,9 +47,30 @@
             hospitals running. Credentials checked. Schedules respected. Conversations that go somewhere.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary btn-arrow" href="mailto:synapse@synapsematches.com?subject=Synapse%20launch%20updates">Get launch updates</a>
+            <form id="waitlist" class="waitlist-form" novalidate>
+              <label class="sr-only" for="waitlist-email">Email address</label>
+              <input
+                id="waitlist-email"
+                class="waitlist-input"
+                type="email"
+                name="email"
+                placeholder="you@hospital.org"
+                autocomplete="email"
+                required
+              />
+              <input
+                class="waitlist-hp"
+                type="text"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+              <button class="btn btn-primary btn-arrow" type="submit">Notify me at launch</button>
+            </form>
             <a class="btn btn-ghost" href="#how">See how it works</a>
           </div>
+          <p id="waitlist-status" class="waitlist-status" role="status" aria-live="polite"></p>
           <p class="hero-meta">In TestFlight beta. Coming to the App Store.</p>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -267,7 +288,7 @@
           <aside class="plus-price" aria-label="Synapse+ pricing">
             <div class="amount"><sup>$</sup>9.99</div>
             <span class="period">per month, cancel anytime</span>
-            <a class="btn btn-primary" href="mailto:synapse@synapsematches.com?subject=Synapse%2B%20launch">Notify me at launch</a>
+            <a class="btn btn-primary" href="#waitlist">Notify me at launch</a>
             <p class="fine">Billed through the App Store. Manage or cancel from your device's Subscriptions settings.</p>
           </aside>
         </div>
@@ -339,5 +360,59 @@
       <p>Made with care for the people who care.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('waitlist');
+      var status = document.getElementById('waitlist-status');
+      if (!form || !status) return;
+
+      var ENDPOINT = 'https://odpmtcscrhjisxpajpto.supabase.co/functions/v1/join-waitlist';
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var emailInput = form.querySelector('input[name="email"]');
+        var honeypot = form.querySelector('input[name="company"]');
+        var button = form.querySelector('button[type="submit"]');
+        var email = emailInput.value.trim();
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+          status.textContent = 'Please enter a valid email address.';
+          status.className = 'waitlist-status is-error';
+          emailInput.focus();
+          return;
+        }
+
+        button.disabled = true;
+        button.textContent = 'Joining…';
+        status.textContent = '';
+        status.className = 'waitlist-status';
+
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, company: honeypot ? honeypot.value : '' })
+        })
+          .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+          .then(function (result) {
+            if (result.ok) {
+              form.innerHTML = '<p class="waitlist-success">You’re on the list — check your inbox ✓</p>';
+              status.textContent = 'We’ll email you the moment Synapse is on the App Store.';
+              status.className = 'waitlist-status';
+            } else {
+              throw new Error((result.data && result.data.error) || 'Something went wrong.');
+            }
+          })
+          .catch(function (err) {
+            status.textContent = err.message === 'Failed to fetch'
+              ? 'Network error — please try again.'
+              : err.message;
+            status.className = 'waitlist-status is-error';
+            button.disabled = false;
+            button.textContent = 'Notify me at launch';
+          });
+      });
+    })();
+  </script>
 </body>
 </html>

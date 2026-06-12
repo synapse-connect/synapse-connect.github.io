@@ -268,6 +268,71 @@ h1 .accent {
 }
 .btn-arrow:hover::after { transform: translateX(3px); }
 
+.waitlist-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.waitlist-input {
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid rgba(20, 22, 43, 0.18);
+  border-radius: var(--radius-pill);
+  padding: 14px 20px;
+  min-width: 240px;
+  flex: 1 1 240px;
+  line-height: 1;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.waitlist-input::placeholder { color: var(--ink-4); }
+.waitlist-input:focus {
+  outline: none;
+  border-color: var(--brand-1);
+  box-shadow: 0 0 0 3px rgba(91, 108, 255, 0.18);
+}
+
+/* Honeypot — hidden from humans, visible to bots that fill every field */
+.waitlist-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.waitlist-success {
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  padding: 14px 0;
+}
+
+.waitlist-status {
+  color: var(--ink-3);
+  font-size: 0.9rem;
+  margin: -0.75rem 0 1.5rem;
+  min-height: 1.2em;
+}
+.waitlist-status.is-error { color: #C0392B; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .hero-meta {
   color: var(--ink-3);
   font-size: 0.9rem;
