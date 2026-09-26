@@ -316,10 +316,34 @@ h1 .accent {
 .waitlist-status {
   color: var(--ink-3);
   font-size: 0.9rem;
-  margin: -0.75rem 0 1.5rem;
-  min-height: 1.2em;
+  margin: 10px 0 0;
 }
+.waitlist-status:empty { display: none; }
 .waitlist-status.is-error { color: #C0392B; }
+
+.waitlist-block { margin-bottom: 1.25rem; }
+
+.waitlist-note {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-3);
+}
+
+.waitlist-done p { margin: 0 0 14px; color: var(--ink-2); }
+.waitlist-done .waitlist-success { padding: 0; margin-bottom: 6px; color: var(--ink); }
+
+.founding-offer {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: rgba(91, 108, 255, 0.08);
+  border: 1px solid rgba(91, 108, 255, 0.18);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+.founding-offer strong { color: var(--ink); font-weight: 600; }
 
 .sr-only {
   position: absolute;
@@ -408,6 +432,20 @@ h1 .accent {
 
 .hero-card-indicator.is-active {
   background: #fff;
+}
+
+.hero-card-example {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(20, 22, 43, 0.55);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  z-index: 2;
 }
 
 .hero-card-badge {
@@ -729,6 +767,7 @@ h1 .accent {
   margin-right: 2px;
 }
 .plus-price .period { color: var(--ink-3); font-size: 0.98rem; margin: 6px 0 18px; display: block; }
+.plus-founding { font-size: 0.9rem; color: var(--brand-1); font-weight: 500; margin: 14px 0 0; line-height: 1.45; }
 .plus-price .fine { font-size: 0.82rem; color: var(--ink-3); margin: 14px 0 0; line-height: 1.5; }
 
 .about-body {
@@ -849,3 +888,11 @@ h1 .accent {
   margin-bottom: 0.75rem;
 }
 .legal-page p { font-size: 1.04rem; color: var(--ink-2); }
+
+/* Signup bands repeated down the page */
+.section.cta-band { padding-top: clamp(64px, 8vw, 100px); padding-bottom: clamp(64px, 8vw, 100px); }
+.cta-band-inner { max-width: 620px; text-align: center; }
+.cta-band h2 { margin-bottom: 1rem; }
+.cta-band-lede { font-size: 1.12rem; color: var(--ink-2); margin: 0 0 28px; }
+.cta-band .waitlist-block { margin: 0 auto; max-width: 540px; }
+.cta-band .waitlist-form { justify-content: center; }

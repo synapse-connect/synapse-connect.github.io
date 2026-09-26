@@ -57,7 +57,7 @@
         <li><a href="#how">How it works</a></li>
         <li><a href="#trust">Verification</a></li>
         <li><a href="#plus">Synapse+</a></li>
-        <li><a class="nav-cta" href="#waitlist">Get updates</a></li>
+        <li><a class="nav-cta" href="#waitlist">Get early access</a></li>
       </ul>
     </nav>
   </header>
@@ -72,7 +72,7 @@
             A verified community for nurses, physicians, therapists, and the people who keep
             hospitals running. Credentials checked. Schedules respected. Conversations that go somewhere.
           </p>
-          <div class="cta-row">
+          <div class="waitlist-block">
             <form id="waitlist" class="waitlist-form" novalidate>
               <label class="sr-only" for="waitlist-email">Email address</label>
               <input
@@ -80,7 +80,7 @@
                 class="waitlist-input"
                 type="email"
                 name="email"
-                placeholder="you@hospital.org"
+                placeholder="you@email.com"
                 autocomplete="email"
                 required
               />
@@ -92,12 +92,13 @@
                 autocomplete="off"
                 aria-hidden="true"
               />
-              <button class="btn btn-primary btn-arrow" type="submit">Notify me at launch</button>
+              <button class="btn btn-primary btn-arrow" type="submit">Get early access</button>
             </form>
-            <a class="btn btn-ghost" href="#how">See how it works</a>
+            <p class="waitlist-status" role="status" aria-live="polite"></p>
+            <p class="waitlist-note">Free to join · Personal email is fine · No spam</p>
           </div>
-          <p id="waitlist-status" class="waitlist-status" role="status" aria-live="polite"></p>
-          <p class="hero-meta">In TestFlight beta. Coming to the App Store.</p>
+          <p class="founding-offer"><strong>Founding member perk:</strong> the first 500 verified members get 3 months of Synapse+ free.</p>
+          <p class="hero-meta">Founded by a pharmacist · Launching first in Cleveland</p>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-glow"></div>
@@ -109,6 +110,7 @@
                 <span class="hero-card-indicator"></span>
                 <span class="hero-card-indicator"></span>
               </div>
+              <span class="hero-card-example">Example profile</span>
               <div class="hero-card-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                 <span>Verified</span>
@@ -285,13 +287,63 @@
       </div>
     </section>
 
+
+    <section class="section section-cream cta-band" id="join" aria-labelledby="join-title">
+      <div class="section-inner cta-band-inner">
+        <p class="eyebrow">Founding members</p>
+        <h2 id="join-title">Join before launch.</h2>
+        <p class="cta-band-lede">The first 500 verified members get 3 months of Synapse+ free. We're launching first in Cleveland, with more cities to follow.</p>
+        <div class="waitlist-block">
+            <form class="waitlist-form" novalidate>
+              <label class="sr-only" for="waitlist-email-2">Email address</label>
+              <input
+                id="waitlist-email-2"
+                class="waitlist-input"
+                type="email"
+                name="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+                required
+              />
+              <input
+                class="waitlist-hp"
+                type="text"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+              <button class="btn btn-primary btn-arrow" type="submit">Get early access</button>
+            </form>
+            <p class="waitlist-status" role="status" aria-live="polite"></p>
+            <p class="waitlist-note">Free to join · Personal email is fine · No spam</p>
+          </div>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="about" aria-labelledby="about-title">
+      <div class="section-inner section-prose">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Built by a pharmacist who gets it.</h2>
+        <p class="about-body">
+          Synapse was started by a pharmacist who knows what dating looks like around rotating shifts,
+          weekend coverage, and holidays spent at the hospital. We watched friends and coworkers give up on
+          apps that didn't account for 12-hour shifts, or that let anyone claim a credential they don't hold.
+        </p>
+        <p class="about-body">
+          So we're building the dating app we wished we had: calm, credible, and respectful of time you don't
+          have much of. We're starting in Cleveland and adding cities as the community grows.
+        </p>
+      </div>
+    </section>
+
     <section class="section plus" id="plus" aria-labelledby="plus-title">
       <div class="section-inner">
         <div class="plus-card">
           <div>
             <span class="plus-tag">Synapse+</span>
             <h2 id="plus-title">More room to find the right person.</h2>
-            <p>An optional subscription for when you want more. No manipulation, no engagement loops — just useful headroom.</p>
+            <p>Synapse is free to join. Synapse+ is an optional subscription for when you want more. No manipulation, no engagement loops — just useful headroom.</p>
             <ul class="plus-features">
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -314,26 +366,44 @@
           <aside class="plus-price" aria-label="Synapse+ pricing">
             <div class="amount"><sup>$</sup>9.99</div>
             <span class="period">per month, cancel anytime</span>
-            <a class="btn btn-primary" href="#waitlist">Notify me at launch</a>
+            <a class="btn btn-primary" href="#waitlist">Get early access</a>
+            <p class="plus-founding">Founding members: the first 500 verified members get 3 months free.</p>
             <p class="fine">Billed through the App Store. Manage or cancel from your device's Subscriptions settings.</p>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section section-paper" id="about" aria-labelledby="about-title">
-      <div class="section-inner section-prose">
-        <p class="eyebrow">About</p>
-        <h2 id="about-title">A small team, built from inside the system.</h2>
-        <p class="about-body">
-          Synapse is built by a small team with first-hand experience inside the healthcare system. We watched
-          friends and partners struggle with dating apps that didn't account for 12-hour shifts, rotating call,
-          or the verification gap that lets non-clinicians claim a credential they don't hold.
-        </p>
-        <p class="about-body">
-          We're building the dating app we wished existed during residency. Calm, credible, and respectful of
-          time you don't have much of.
-        </p>
+    <section class="section section-paper cta-band" id="join-final" aria-labelledby="join-final-title">
+      <div class="section-inner cta-band-inner">
+        <p class="eyebrow">Get early access</p>
+        <h2 id="join-final-title">Dating that fits your shifts starts here.</h2>
+        <p class="cta-band-lede">Free to join. The first 500 verified members get 3 months of Synapse+ free.</p>
+        <div class="waitlist-block">
+            <form class="waitlist-form" novalidate>
+              <label class="sr-only" for="waitlist-email-3">Email address</label>
+              <input
+                id="waitlist-email-3"
+                class="waitlist-input"
+                type="email"
+                name="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+                required
+              />
+              <input
+                class="waitlist-hp"
+                type="text"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+              <button class="btn btn-primary btn-arrow" type="submit">Get early access</button>
+            </form>
+            <p class="waitlist-status" role="status" aria-live="polite"></p>
+            <p class="waitlist-note">Free to join · Personal email is fine · No spam</p>
+          </div>
       </div>
     </section>
 
@@ -389,54 +459,86 @@
 
   <script>
     (function () {
-      var form = document.getElementById('waitlist');
-      var status = document.getElementById('waitlist-status');
-      if (!form || !status) return;
-
       var ENDPOINT = 'https://odpmtcscrhjisxpajpto.supabase.co/functions/v1/join-waitlist';
+      var SHARE_URL = 'https://synapsematches.com/?ref=share';
+      var SHARE_TEXT = 'I just joined the waitlist for Synapse, a verified dating app for healthcare workers. The first 500 verified members get 3 months of Synapse+ free.';
+      var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var emailInput = form.querySelector('input[name="email"]');
-        var honeypot = form.querySelector('input[name="company"]');
-        var button = form.querySelector('button[type="submit"]');
-        var email = emailInput.value.trim();
+      function showShare(block) {
+        block.innerHTML =
+          '<div class="waitlist-done">' +
+            '<p class="waitlist-success">You’re on the list — check your inbox ✓</p>' +
+            '<p>Know someone in healthcare who’s done with the usual apps? Send them Synapse.</p>' +
+            '<button class="btn btn-primary share-btn" type="button">Share with a coworker</button>' +
+            '<p class="waitlist-status" role="status" aria-live="polite"></p>' +
+          '</div>';
+        var btn = block.querySelector('.share-btn');
+        var status = block.querySelector('.waitlist-status');
+        btn.addEventListener('click', function () {
+          if (navigator.share) {
+            navigator.share({ title: 'Synapse', text: SHARE_TEXT, url: SHARE_URL }).catch(function () {});
+            return;
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(SHARE_TEXT + ' ' + SHARE_URL).then(function () {
+              btn.textContent = 'Link copied ✓';
+              status.textContent = 'Paste it into a text or group chat.';
+            }, function () {
+              status.textContent = SHARE_URL;
+            });
+          } else {
+            status.textContent = SHARE_URL;
+          }
+        });
+      }
 
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-          status.textContent = 'Please enter a valid email address.';
-          status.className = 'waitlist-status is-error';
-          emailInput.focus();
-          return;
-        }
+      document.querySelectorAll('.waitlist-block').forEach(function (block) {
+        var form = block.querySelector('.waitlist-form');
+        var status = block.querySelector('.waitlist-status');
+        if (!form || !status) return;
 
-        button.disabled = true;
-        button.textContent = 'Joining…';
-        status.textContent = '';
-        status.className = 'waitlist-status';
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var emailInput = form.querySelector('input[name="email"]');
+          var honeypot = form.querySelector('input[name="company"]');
+          var button = form.querySelector('button[type="submit"]');
+          var label = button.textContent;
+          var email = emailInput.value.trim();
 
-        fetch(ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, company: honeypot ? honeypot.value : '' })
-        })
-          .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
-          .then(function (result) {
-            if (result.ok) {
-              form.innerHTML = '<p class="waitlist-success">You’re on the list — check your inbox ✓</p>';
-              status.textContent = 'We’ll email you the moment Synapse is on the App Store.';
-              status.className = 'waitlist-status';
-            } else {
-              throw new Error((result.data && result.data.error) || 'Something went wrong.');
-            }
-          })
-          .catch(function (err) {
-            status.textContent = err.message === 'Failed to fetch'
-              ? 'Network error — please try again.'
-              : err.message;
+          if (!EMAIL_RE.test(email)) {
+            status.textContent = 'Please enter a valid email address.';
             status.className = 'waitlist-status is-error';
-            button.disabled = false;
-            button.textContent = 'Notify me at launch';
-          });
+            emailInput.focus();
+            return;
+          }
+
+          button.disabled = true;
+          button.textContent = 'Joining…';
+          status.textContent = '';
+          status.className = 'waitlist-status';
+
+          fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, company: honeypot ? honeypot.value : '' })
+          })
+            .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+            .then(function (result) {
+              if (result.ok) {
+                showShare(block);
+              } else {
+                throw new Error((result.data && result.data.error) || 'Something went wrong.');
+              }
+            })
+            .catch(function (err) {
+              status.textContent = err.message === 'Failed to fetch'
+                ? 'Network error — please try again.'
+                : err.message;
+              status.className = 'waitlist-status is-error';
+              button.disabled = false;
+              button.textContent = label;
+            });
+        });
       });
     })();
   </script>
