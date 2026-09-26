@@ -6,24 +6,50 @@
   <meta name="description" content="Synapse is a verified dating app for healthcare workers. Credentials checked against state boards and the NPI registry. Schedule-aware matching for shift work." />
   <meta name="theme-color" content="#FAF8F4" />
   <title>Synapse — Dating for Healthcare Workers</title>
-  <link rel="icon" type="image/png" href="og-image.png" />
-  <link rel="apple-touch-icon" href="og-image.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="canonical" href="https://synapsematches.com/" />
   <meta property="og:title" content="Synapse — Dating for Healthcare Workers" />
   <meta property="og:description" content="A verified dating community for clinicians and care teams. Credentials checked. Schedules respected." />
   <meta property="og:image" content="https://synapsematches.com/og-image.png" />
   <meta property="og:url" content="https://synapsematches.com" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Synapse" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://synapsematches.com/#org",
+        "name": "Synapse Connect",
+        "legalName": "Synapse Connect LLC",
+        "url": "https://synapsematches.com/",
+        "logo": "https://synapsematches.com/og-image.png",
+        "email": "synapse@synapsematches.com",
+        "description": "Synapse is a verified dating app for healthcare workers, with credentials checked against state boards and the NPI registry and schedule-aware matching for shift work."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://synapsematches.com/#website",
+        "url": "https://synapsematches.com/",
+        "name": "Synapse",
+        "publisher": { "@id": "https://synapsematches.com/#org" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a href="#top" class="brand" aria-label="Synapse home">
-        <img src="og-image.png" alt="" class="brand-mark" aria-hidden="true" />
+        <img src="icons/brand-64.png" alt="" class="brand-mark" aria-hidden="true" />
         <span>Synapse</span>
       </a>
       <ul class="nav-links">
@@ -90,7 +116,7 @@
             </div>
             <div class="hero-card-info">
               <div class="hero-card-namerow">
-                <h2 class="hero-card-name">Priya, 29</h2>
+                <p class="hero-card-name">Priya, 29</p>
                 <svg class="hero-card-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
               </div>
               <p class="hero-card-occupation">Registered Nurse · Pediatric ICU</p>
@@ -331,7 +357,7 @@
     <div class="footer-inner">
       <div>
         <p class="footer-brand">
-          <img src="og-image.png" alt="" class="footer-mark" aria-hidden="true" />
+          <img src="icons/brand-64.png" alt="" class="footer-mark" aria-hidden="true" />
           Synapse Connect
         </p>
         <p class="footer-tag">A verified dating community for the people who keep healthcare running.</p>

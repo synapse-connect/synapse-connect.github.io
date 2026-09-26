@@ -444,6 +444,7 @@ h1 .accent {
 
 .hero-card-name {
   margin: 0;
+  line-height: 1.1;
   font-family: var(--sans);
   font-size: 1.5rem;
   font-weight: 700;
