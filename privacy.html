@@ -33,63 +33,114 @@
     <div class="section-inner section-prose">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Last updated: May 2026</p>
+      <p class="legal-meta">Last updated: October 10, 2026</p>
 
-      <p>
-        Synapse Connect ("Synapse," "we," "us") operates the Synapse dating application and this website.
-        This Privacy Policy describes how we collect, use, and share information when you use our services.
-      </p>
+      <h2>1. Who we are</h2>
+      <p>Synapse Connect LLC (&quot;Synapse,&quot; &quot;we,&quot; &quot;us&quot;) runs the Synapse dating app for healthcare workers. This policy explains what we collect, why, who we share it with, how long we keep it, and the choices you have. Contact: support@synapsematches.com.</p>
 
-      <h2>Information we collect</h2>
-      <p>
-        When you create a Synapse account, we collect information you provide directly: your name, date of
-        birth, email address, profile photos, healthcare credential details (license number, issuing state,
-        NPI where applicable), schedule preferences, and the content of conversations you send through the
-        app. We also collect a government-issued photo ID and a verification selfie for the sole purpose of
-        confirming your identity.
-      </p>
-      <p>
-        We collect limited technical information automatically: device type, operating system version, app
-        version, crash diagnostics, and authentication tokens.
-      </p>
+      <h2>2. What we collect</h2>
+      <p>You give us:</p>
+      <ul>
+        <li>Account details: first and last name, email address, date of birth, gender, what you&#x27;re looking for, and who you want to see.</li>
+        <li>Professional details: occupation and specialty; your NPI number, or your license number, state, expiry date and a photo of the license; or for students, a .edu email or a student ID photo.</li>
+        <li>Identity check: a photo of your government ID and a selfie (see section 4).</li>
+        <li>Profile: photos, prompt answers, and optional details such as hometown, political views, kids, pets, zodiac sign and religion.</li>
+        <li>Schedule: the availability blocks you enter, used to suggest date times.</li>
+        <li>Messages: texts, photos, videos and voice notes you send in chat.</li>
+        <li>Reports and blocks you make.</li>
+      </ul>
+      <p>Collected automatically:</p>
+      <ul>
+        <li>Location: with your permission, your phone&#x27;s location. It reaches our server once and is stored only rounded to about 1 km, for matching by distance. Your phone&#x27;s maps service (Apple or Google) turns it into a city name, and if you type a city instead, the search goes to OpenStreetMap.</li>
+        <li>Device and technical data: device type, operating system, push notification token, crash reports, and the IP address your requests come from (kept in server logs).</li>
+        <li>Activity: likes, passes, matches and the days you used the app.</li>
+      </ul>
+      <p>From others:</p>
+      <ul>
+        <li>Apple or Google, if you sign in with them: your name and email.</li>
+        <li>The public NPI Registry (NPPES), to check NPI numbers.</li>
+        <li>Apple or Google, when you buy something: purchase and subscription status (never your card details).</li>
+      </ul>
+      <p>Earlier versions of the app asked for sexual orientation. We no longer collect it, and it was never shown to other members or used for matching.</p>
 
-      <h2>How we use information</h2>
-      <p>
-        We use your information to verify your healthcare credentials and identity, to match you with other
-        verified users, to deliver in-app messages and notifications, to prevent fraud, to comply with
-        applicable law, and to improve the product.
-      </p>
+      <h2>3. How we use it</h2>
+      <ul>
+        <li>To run the app: create your profile, show it to potential matches, match you, and let you message.</li>
+        <li>To verify you: check professional credentials and confirm you are the person on your ID.</li>
+        <li>To keep people safe: automatically screen new profile photos and prompt answers for explicit, violent or hateful content, review reports, hide or suspend accounts that break the rules, and prevent fraud and duplicate accounts.</li>
+        <li>To suggest date times and nearby date spots.</li>
+        <li>To send notifications about matches and messages.</li>
+        <li>To process purchases and keep the app working (fixing crashes).</li>
+      </ul>
+      <p>We do not sell your personal information, share it for targeted advertising, or use it to train AI models.</p>
 
-      <h2>Verification data</h2>
-      <p>
-        Identity verification is performed using AWS Rekognition for face matching. Healthcare credentials
-        are checked against publicly available state board records and the NPI registry (NPPES) maintained by
-        the Centers for Medicare &amp; Medicaid Services. Government IDs and verification selfies are stored
-        encrypted and access-controlled; they are retained only as long as required to support your verified
-        status and to comply with audit obligations.
-      </p>
+      <h2>4. Face matching and biometric information</h2>
+      <p>To confirm you are the person on your ID, you can choose an automatic face match or a review by a person.</p>
+      <p>If you choose the face match and tick the consent box, we send your ID photo and selfie to Amazon Rekognition (Amazon Web Services), which measures the geometry of the faces to compare them. Some state laws, including Illinois, Texas and Washington law, treat this as biometric information. Synapse never stores the face measurements; we keep only the result (a match score and the decision). Amazon processes the images for us under its service terms.</p>
+      <p>Retention and destruction schedule: we delete your ID photo and selfie within 30 days of the verification decision, and in any case within 3 years of when you submitted them. Deleting your account deletes them immediately.</p>
+      <p>We never sell biometric information, share it with other members, or use it for anything else. You can withdraw face-match consent at any time in Settings; later checks then go to a person. If you choose review by a person, no face matching is used.</p>
 
-      <h2>How we share information</h2>
-      <p>
-        We do not sell your personal information. We share information with service providers (Supabase for
-        application hosting and database, AWS for identity verification, Expo for push notifications,
-        RevenueCat for subscription management, OpenAI for AI-assisted features) under contractual
-        confidentiality and data-use restrictions. We share information with other users only as you direct
-        (your profile, messages, and signals). We may disclose information when required by law.
-      </p>
+      <h2>5. AI features</h2>
+      <ul>
+        <li>Conversation starters: if you turn on &quot;Let AI suggest openers using my profile&quot; in Settings (it is off by default), your first name, job and prompt answers are sent to Anthropic&#x27;s Claude AI to suggest openers to people you match with. Your private messages are never sent.</li>
+        <li>License reading: when you upload a license photo, we ask before sending it to OpenAI to read the license number, state and expiry date. You can type them yourself instead.</li>
+      </ul>
+      <p>These providers process the data for us under their API terms and do not use it to train their models.</p>
 
-      <h2>Your rights</h2>
-      <p>
-        You may access, correct, export, or delete your Synapse account and associated data at any time
-        from within the app or by contacting us. Deletion removes your profile, messages, photos, and
-        verification documents within 30 days, except where retention is required by law.
-      </p>
+      <h2>6. Who we share it with</h2>
+      <p>Other members see your profile: first name, age, occupation, city, photos, prompt answers, verification badge, approximate distance and the optional details you add (such as religion or political views, which are always optional). Some matching settings, such as your gender, what you&#x27;re looking for and who you want to see, are also available to other members&#x27; apps so matching works both ways. Other members never see your last name, exact location, ID, selfie, license details or schedule.</p>
+      <p>Service providers that process data for us:</p>
+      <ul>
+        <li>Supabase (database, sign-in, file storage, server functions), hosted on Amazon Web Services in the United States.</li>
+        <li>Amazon Web Services: Rekognition for face matching (only with your consent) and, with Comprehend, for screening new profile photos and prompt answers.</li>
+        <li>Anthropic (conversation starters, only if your match turned them on) and OpenAI (license reading, only if you allow it).</li>
+        <li>Google Places (date spot suggestions, using the midpoint between two approximate locations).</li>
+        <li>Expo (push notifications and app updates).</li>
+        <li>RevenueCat, Apple and Google (purchases and subscriptions).</li>
+        <li>Sentry (crash reports).</li>
+        <li>Resend (emails: sign-in codes, and messages to our team with verification documents for review and safety reports).</li>
+        <li>OpenStreetMap (city search) and your phone&#x27;s maps service (turning location into a city name).</li>
+        <li>Apple and Google sign-in, if you use them.</li>
+      </ul>
+      <p>We may also disclose information if the law requires it, to protect someone&#x27;s safety, or as part of a merger or sale of the business (we would tell you first).</p>
 
-      <h2>Contact</h2>
-      <p>
-        Privacy questions, data requests, or compliance inquiries:
-        <a href="mailto:synapse@synapsematches.com">synapse@synapsematches.com</a>.
-      </p>
+      <h2>7. How long we keep it</h2>
+      <ul>
+        <li>Your account and profile: until you delete your account.</li>
+        <li>Messages: until either person in the conversation deletes their account. Unmatching or blocking closes the chat for both people; the messages are kept as evidence in case of a report.</li>
+        <li>ID photo and selfie: see the schedule in section 4.</li>
+        <li>Verification results, license details and reports: for the life of the account, to keep members safe.</li>
+        <li>Activity days: for the life of the account.</li>
+        <li>Crash reports: about 30 days. Server and email delivery logs: up to about 90 days.</li>
+      </ul>
+      <p>When you delete your account in Settings, we delete your profile, photos, messages, matches, verification documents and consent records. Purchase records may remain with Apple, Google and RevenueCat under their own policies, and an anonymous record of a subscription cancellation reason may remain. Copies in database backups are deleted when the backup is deleted.</p>
+
+      <h2>8. Your choices and rights</h2>
+      <ul>
+        <li>See and correct: most details can be edited in the app.</li>
+        <li>Delete: Settings → Delete Account.</li>
+        <li>Copy of your data: email us and we will send it within 30 days (45 days where state law allows).</li>
+        <li>Withdraw consent: face matching and AI conversation starters can be turned off in Settings; location and notifications in your phone&#x27;s settings.</li>
+        <li>Depending on where you live (for example California, Colorado, Connecticut, Virginia, or the EU/UK), you may have rights to know, access, correct, delete and port your data, and to limit the use of sensitive information. We do not sell or share data for targeted advertising, so there is nothing to opt out of there.</li>
+      </ul>
+      <p>To use a right, email support@synapsematches.com. If we decline your request, you can appeal by replying to our answer; if we still decline, you can contact your state attorney general or data protection authority.</p>
+      <p>If EU or UK law applies to you: we process your data to provide the service you signed up for (contract), with your consent where we ask for it (face matching, AI conversation starters, location), for our legitimate interest in keeping members safe and preventing fraud, and where the law requires it. You can complain to your local data protection authority.</p>
+
+      <h2>9. Security</h2>
+      <p>Data is encrypted in transit and at rest. ID documents sit in a private storage area only our verification system can read, and database rules limit what each member can see. No system is perfectly secure; if a breach affects your information, we will notify you and the authorities as the law requires.</p>
+
+      <h2>10. Children</h2>
+      <p>Synapse is only for people 18 and older. We don&#x27;t knowingly collect information from anyone under 18, and we delete it if we learn we have. Tell us at support@synapsematches.com if you think a minor is using Synapse.</p>
+
+      <h2>11. Where data is processed</h2>
+      <p>Synapse is based in the United States, and your information is stored and processed there. If you use Synapse from outside the US, your information is transferred to the US.</p>
+
+      <h2>12. Changes</h2>
+      <p>We will post any change here and update the date above. For important changes we will also tell you in the app or by email before they take effect.</p>
+
+      <h2>13. Contact</h2>
+      <p>Synapse Connect LLC</p>
+      <p>Email: support@synapsematches.com</p>
     </div>
   </main>
 
@@ -115,7 +166,7 @@
         <h4>Company</h4>
         <ul>
           <li><a href="index.html#about">About</a></li>
-          <li><a href="mailto:synapse@synapsematches.com">Contact</a></li>
+          <li><a href="mailto:support@synapsematches.com">Contact</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
         </ul>
