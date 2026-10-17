@@ -382,157 +382,6 @@ h1 .accent {
   position: relative;
 }
 
-.hero-card {
-  position: relative;
-  width: 100%;
-  max-width: 360px;
-  aspect-ratio: 9 / 14;
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  border: 1px solid rgba(20, 22, 43, 0.06);
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-card-photo {
-  position: relative;
-  flex: 0 0 62%;
-  background-color: #EADCC9;
-  background-image: url("assets/sarah-profile.jpg");
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
-}
-
-.hero-card-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 60%, rgba(20, 22, 43, 0.18) 100%);
-  pointer-events: none;
-}
-
-.hero-card-indicators {
-  position: absolute;
-  top: 10px;
-  left: 14px;
-  right: 14px;
-  display: flex;
-  gap: 4px;
-  z-index: 2;
-}
-
-.hero-card-indicator {
-  flex: 1;
-  height: 3px;
-  border-radius: 1.5px;
-  background: rgba(255, 255, 255, 0.45);
-}
-
-.hero-card-indicator.is-active {
-  background: #fff;
-}
-
-.hero-card-example {
-  position: absolute;
-  bottom: 12px;
-  left: 14px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(20, 22, 43, 0.55);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  z-index: 2;
-}
-
-.hero-card-badge {
-  position: absolute;
-  top: 18px;
-  right: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: var(--brand-1);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgba(91, 108, 255, 0.35);
-}
-
-.hero-card-info {
-  padding: 18px 20px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  background: #fff;
-}
-
-.hero-card-namerow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hero-card-name {
-  margin: 0;
-  line-height: 1.1;
-  font-family: var(--sans);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-}
-
-.hero-card-chevron {
-  color: var(--ink-3);
-}
-
-.hero-card-occupation {
-  margin: 2px 0 0;
-  font-size: 0.92rem;
-  color: var(--ink-2);
-}
-
-.hero-card-location {
-  margin-top: 4px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.82rem;
-  color: var(--ink-3);
-}
-
-.hero-card-prompt {
-  margin-top: 12px;
-  padding: 12px 14px;
-  background: var(--cream);
-  border-radius: 12px;
-  border: 1px solid var(--line);
-}
-
-.hero-card-prompt-q {
-  margin: 0 0 4px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--brand-1);
-  letter-spacing: 0.01em;
-}
-
-.hero-card-prompt-a {
-  margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.4;
-  color: var(--ink);
-}
-
 .app-tour {
   width: 100%;
   max-width: 424px;
@@ -555,12 +404,7 @@ h1 .accent {
 @media (max-width: 480px) {
   .app-tour-slide { padding: 0 12px; }
 }
-/* In the carousel the card grows to fit its text instead of a fixed 9:14 box,
-   so narrow screens never clip the prompt. The photo keeps its original shape. */
-.app-tour .hero-card { aspect-ratio: auto; }
-.app-tour .hero-card-photo { flex: none; aspect-ratio: 360 / 347; }
 /* A tighter shadow than --shadow-lg, so the scroll area doesn't crop it into a visible box. */
-.app-tour .hero-card,
 .app-tour-phone img { box-shadow: 0 14px 28px rgba(91, 108, 255, 0.16), 0 4px 12px rgba(20, 22, 43, 0.08); }
 .app-tour-track::-webkit-scrollbar { display: none; }
 .app-tour-track:focus-visible { outline: 2px solid var(--brand-1); outline-offset: 4px; }
@@ -585,27 +429,22 @@ h1 .accent {
   color: var(--ink-2);
 }
 
-/* The profile card sets the slide height; each phone fills it. The image is taken out of
-   the flow so its own size can't stretch the carousel. */
 .app-tour-phone {
-  position: relative;
   width: 100%;
-  flex: 1;
-  min-height: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .app-tour-phone img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-  width: auto;
-  aspect-ratio: 520 / 1131;
+  width: 73.6%;
+  height: auto;
   border-radius: 30px;
   border: 6px solid var(--ink);
   background: var(--ink);
   box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  .app-tour-phone img { width: 84%; }
 }
 
 .app-tour-controls {
