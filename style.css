@@ -375,6 +375,7 @@ h1 .accent {
 }
 
 .hero-visual {
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -530,6 +531,126 @@ h1 .accent {
   font-size: 0.88rem;
   line-height: 1.4;
   color: var(--ink);
+}
+
+.app-tour {
+  width: 100%;
+  max-width: 424px;
+  min-width: 0;
+}
+
+.app-tour-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  border-radius: 24px;
+  /* room for the card shadow, which overflow would otherwise clip */
+  padding: 32px 0 24px;
+  margin: -32px 0 -16px;
+}
+.app-tour-slide { padding: 0 32px; box-sizing: border-box; }
+/* A tighter shadow than --shadow-lg, so the scroll area doesn't crop it into a visible box. */
+.app-tour .hero-card,
+.app-tour-phone img { box-shadow: 0 14px 28px rgba(91, 108, 255, 0.16), 0 4px 12px rgba(20, 22, 43, 0.08); }
+.app-tour-track::-webkit-scrollbar { display: none; }
+.app-tour-track:focus-visible { outline: 2px solid var(--brand-1); outline-offset: 4px; }
+
+.app-tour-slide {
+  flex: 0 0 100%;
+  margin: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-tour-slide figcaption {
+  margin-top: 14px;
+  min-height: 2.6em;
+  padding: 0 12px;
+  text-align: center;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+.app-tour-phone {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Sized from the width so each phone is exactly as tall as the 9:14 profile card. */
+.app-tour-phone img {
+  width: 73.2%;
+  height: auto;
+  border-radius: 30px;
+  border: 6px solid var(--ink);
+  background: var(--ink);
+  box-sizing: border-box;
+}
+
+.app-tour-controls {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.app-tour-arrow {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.app-tour-arrow:hover { border-color: var(--brand-1); color: var(--brand-1); }
+.app-tour-arrow:focus-visible { outline: 2px solid var(--brand-1); outline-offset: 2px; }
+
+.app-tour-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.app-tour-dot {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.app-tour-dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: width 0.2s, background 0.2s;
+}
+.app-tour-dot[aria-current="true"]::before {
+  width: 20px;
+  border-radius: 4px;
+  background: var(--brand-1);
+}
+.app-tour-dot:focus-visible { outline: 2px solid var(--brand-1); outline-offset: 1px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .app-tour-track { scroll-behavior: auto; }
 }
 
 .hero-glow {

@@ -100,8 +100,11 @@
           <p class="founding-offer">The first 100 verified members get <strong>3 months of Synapse+ free</strong>.</p>
           <p class="hero-meta">Founded by a pharmacist and a physician · Launching first in Cleveland</p>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-glow"></div>
+        <div class="hero-visual">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="app-tour" role="region" aria-roledescription="carousel" aria-label="A look inside the Synapse app">
+            <div class="app-tour-track" tabindex="0">
+              <figure class="app-tour-slide" aria-roledescription="slide" aria-label="1 of 7: Example profile">
           <div class="hero-card">
             <div class="hero-card-photo">
               <div class="hero-card-indicators">
@@ -130,6 +133,43 @@
                 <p class="hero-card-prompt-q">A perfect first date</p>
                 <p class="hero-card-prompt-a">Coffee somewhere quiet enough to actually hear each other.</p>
               </div>
+            </div>
+          </div>
+                <figcaption>An example profile. Swipe to see the real app.</figcaption>
+              </figure>
+              <figure class="app-tour-slide" aria-roledescription="slide" aria-label="2 of 7: Discover">
+                <div class="app-tour-phone"><img src="assets/app/discover.webp" width="520" height="1131" decoding="async" alt="Synapse app, discover screen. Swipe through verified healthcare workers near you."></div>
+                <figcaption>Swipe through verified healthcare workers near you.</figcaption>
+              </figure>
+              <figure class="app-tour-slide" aria-roledescription="slide" aria-label="3 of 7: Profile">
+                <div class="app-tour-phone"><img src="assets/app/profile.webp" width="520" height="1131" decoding="async" alt="Synapse app, profile screen. Tap a card to see their full profile and prompts."></div>
+                <figcaption>Tap a card to see their full profile and prompts.</figcaption>
+              </figure>
+              <figure class="app-tour-slide" aria-roledescription="slide" aria-label="4 of 7: Schedule">
+                <div class="app-tour-phone"><img src="assets/app/schedule.webp" width="520" height="1131" decoding="async" alt="Synapse app, schedule screen. Mark when you’re free between shifts."></div>
+                <figcaption>Mark when you’re free between shifts.</figcaption>
+              </figure>
+              <figure class="app-tour-slide" aria-roledescription="slide" aria-label="5 of 7: Find a time">
+                <div class="app-tour-phone"><img src="assets/app/times.webp" width="520" height="1131" decoding="async" alt="Synapse app, find a time screen. Synapse finds the times you’re both actually free."></div>
+                <figcaption>Synapse finds the times you’re both actually free.</figcaption>
+              </figure>
+              <figure class="app-tour-slide" aria-roledescription="slide" aria-label="6 of 7: Chat">
+                <div class="app-tour-phone"><img src="assets/app/chat.webp" width="520" height="1131" decoding="async" alt="Synapse app, chat screen. Chat, then turn it into a real date."></div>
+                <figcaption>Chat, then turn it into a real date.</figcaption>
+              </figure>
+              <figure class="app-tour-slide" aria-roledescription="slide" aria-label="7 of 7: Matches">
+                <div class="app-tour-phone"><img src="assets/app/matches.webp" width="520" height="1131" decoding="async" alt="Synapse app, matches screen. All your matches and conversations in one place."></div>
+                <figcaption>All your matches and conversations in one place.</figcaption>
+              </figure>
+            </div>
+            <div class="app-tour-controls">
+              <button class="app-tour-arrow" type="button" data-dir="-1" aria-label="Previous screen">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <div class="app-tour-dots" role="group" aria-label="Choose a screen"></div>
+              <button class="app-tour-arrow" type="button" data-dir="1" aria-label="Next screen">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
             </div>
           </div>
         </div>
@@ -541,6 +581,51 @@
             });
         });
       });
+    })();
+  </script>
+  <script>
+    // Hero app tour: native horizontal scroll-snap does the swiping; this adds arrows and dots.
+    (function () {
+      var tour = document.querySelector('.app-tour');
+      if (!tour) return;
+      var track = tour.querySelector('.app-tour-track');
+      var slides = Array.prototype.slice.call(track.children);
+      var dotsWrap = tour.querySelector('.app-tour-dots');
+      var dots = slides.map(function (slide, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'app-tour-dot';
+        dot.setAttribute('aria-label', 'Show ' + slide.getAttribute('aria-label').replace(/^\d+ of \d+: /, ''));
+        dot.addEventListener('click', function () { go(i); });
+        dotsWrap.appendChild(dot);
+        return dot;
+      });
+      var current = 0;
+      var pending = null; // slide we're animating to, so quick repeat clicks keep counting
+      function go(i) {
+        i = (i + slides.length) % slides.length;
+        pending = i;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: reduce ? 'instant' : 'smooth' });
+      }
+      function update() {
+        var i = Math.round(track.scrollLeft / track.clientWidth);
+        current = Math.max(0, Math.min(slides.length - 1, i));
+        if (current === pending) pending = null;
+        dots.forEach(function (d, k) { d.setAttribute('aria-current', k === current ? 'true' : 'false'); });
+        slides.forEach(function (s, k) { s.setAttribute('aria-hidden', k === current ? 'false' : 'true'); });
+      }
+      tour.querySelectorAll('.app-tour-arrow').forEach(function (btn) {
+        btn.addEventListener('click', function () { go((pending !== null ? pending : current) + Number(btn.getAttribute('data-dir'))); });
+      });
+      track.addEventListener('keydown', function (e) {
+        var base = pending !== null ? pending : current;
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(base + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); go(base - 1); }
+      });
+      var raf;
+      track.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
+      update();
     })();
   </script>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf261370e2ad4e2380d12c57f0178c21"}'></script><!-- End Cloudflare Web Analytics -->
