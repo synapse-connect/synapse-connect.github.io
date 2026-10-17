@@ -552,6 +552,13 @@ h1 .accent {
   margin: -32px 0 -16px;
 }
 .app-tour-slide { padding: 0 32px; box-sizing: border-box; }
+@media (max-width: 480px) {
+  .app-tour-slide { padding: 0 12px; }
+}
+/* In the carousel the card grows to fit its text instead of a fixed 9:14 box,
+   so narrow screens never clip the prompt. The photo keeps its original shape. */
+.app-tour .hero-card { aspect-ratio: auto; }
+.app-tour .hero-card-photo { flex: none; aspect-ratio: 360 / 347; }
 /* A tighter shadow than --shadow-lg, so the scroll area doesn't crop it into a visible box. */
 .app-tour .hero-card,
 .app-tour-phone img { box-shadow: 0 14px 28px rgba(91, 108, 255, 0.16), 0 4px 12px rgba(20, 22, 43, 0.08); }
@@ -578,16 +585,23 @@ h1 .accent {
   color: var(--ink-2);
 }
 
+/* The profile card sets the slide height; each phone fills it. The image is taken out of
+   the flow so its own size can't stretch the carousel. */
 .app-tour-phone {
+  position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  flex: 1;
+  min-height: 0;
 }
 
-/* Sized from the width so each phone is exactly as tall as the 9:14 profile card. */
 .app-tour-phone img {
-  width: 73.2%;
-  height: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  aspect-ratio: 520 / 1131;
   border-radius: 30px;
   border: 6px solid var(--ink);
   background: var(--ink);
