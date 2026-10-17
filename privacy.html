@@ -33,7 +33,7 @@
     <div class="section-inner section-prose">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Last updated: October 10, 2026</p>
+      <p class="legal-meta">Last updated: October 17, 2026</p>
 
       <h2>1. Who we are</h2>
       <p>Synapse Connect LLC (&quot;Synapse,&quot; &quot;we,&quot; &quot;us&quot;) runs the Synapse dating app for healthcare workers. This policy explains what we collect, why, who we share it with, how long we keep it, and the choices you have. Contact: support@synapsematches.com.</p>
@@ -76,7 +76,7 @@
 
       <h2>4. Face matching and biometric information</h2>
       <p>To confirm you are the person on your ID, you can choose an automatic face match or a review by a person.</p>
-      <p>If you choose the face match and tick the consent box, we send your ID photo and selfie to Amazon Rekognition (Amazon Web Services), which measures the geometry of the faces to compare them. Some state laws, including Illinois, Texas and Washington law, treat this as biometric information. Synapse never stores the face measurements; we keep only the result (a match score and the decision). Amazon processes the images for us under its service terms.</p>
+      <p>If you choose the face match and tick the consent box, we send your ID photo and selfie to Amazon Rekognition (Amazon Web Services), which measures the geometry of the faces to compare them. Some state laws, including Illinois, Texas and Washington law, treat this as biometric information. Synapse never stores the face measurements; we keep only the result (a match score and the decision). Amazon processes the images for us under its service terms. In the same step, Amazon Textract reads the first and last name printed on your ID so we can check that it matches your license record. We keep only that name, and delete it together with your ID photo.</p>
       <p>Retention and destruction schedule: we delete your ID photo and selfie within 30 days of the verification decision, and in any case within 3 years of when you submitted them. Deleting your account deletes them immediately.</p>
       <p>We never sell biometric information, share it with other members, or use it for anything else. You can withdraw face-match consent at any time in Settings; later checks then go to a person. If you choose review by a person, no face matching is used.</p>
 
@@ -92,7 +92,7 @@
       <p>Service providers that process data for us:</p>
       <ul>
         <li>Supabase (database, sign-in, file storage, server functions), hosted on Amazon Web Services in the United States.</li>
-        <li>Amazon Web Services: Rekognition for face matching (only with your consent) and, with Comprehend, for screening new profile photos and prompt answers.</li>
+        <li>Amazon Web Services: Rekognition for face matching and Textract for reading the name on your ID (both only with your consent), and, with Comprehend, for screening new profile photos and prompt answers.</li>
         <li>Anthropic (conversation starters, only if your match turned them on) and OpenAI (license reading, only if you allow it).</li>
         <li>Google Places (date spot suggestions, using the midpoint between two approximate locations).</li>
         <li>Expo (push notifications and app updates).</li>
