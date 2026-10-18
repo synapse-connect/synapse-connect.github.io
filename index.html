@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Synapse is a verified dating app for healthcare workers. Credentials checked against state boards and the NPI registry. Schedule-aware matching for shift work." />
+  <meta name="description" content="Synapse is a verified dating app for healthcare workers. Credentials checked against the NPI registry or reviewed by our team. Date times that fit around shift work." />
   <meta name="theme-color" content="#FAF8F4" />
   <title>Synapse — Dating for Healthcare Workers</title>
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
@@ -32,7 +32,7 @@
         "url": "https://synapsematches.com/",
         "logo": "https://synapsematches.com/og-image.png",
         "email": "synapse@synapsematches.com",
-        "description": "Synapse is a verified dating app for healthcare workers, with credentials checked against state boards and the NPI registry and schedule-aware matching for shift work."
+        "description": "Synapse is a verified dating app for healthcare workers, with credentials checked against the NPI registry or reviewed by our team, and date times suggested around shift work."
       },
       {
         "@type": "WebSite",
@@ -69,8 +69,8 @@
           <p class="eyebrow">For clinicians and care teams</p>
           <h1 id="hero-title">Dating, designed for <span class="accent">your hours.</span></h1>
           <p class="lede">
-            A verified community for nurses, physicians, pharmacists, therapists, and the people who keep
-            hospitals running. Credentials checked. Schedules respected. Conversations that go somewhere.
+            A verified community for nurses, physicians, pharmacists, PAs, therapists, and healthcare students.
+            Credentials checked. Schedules respected. Conversations that go somewhere.
           </p>
           <div class="waitlist-block">
             <form id="waitlist" class="waitlist-form" novalidate>
@@ -98,7 +98,7 @@
             <p class="waitlist-note">Free to join · Personal email is fine · No spam</p>
           </div>
           <p class="founding-offer">The first 100 verified members get <strong>3 months of Synapse+ free</strong>.</p>
-          <p class="hero-meta">Founded by a pharmacist and a physician · Launching first in Cleveland</p>
+          <p class="hero-meta">Founded by a pharmacist and a physician · Launching in Cleveland, Boston, and the Research Triangle</p>
         </div>
         <div class="hero-visual">
           <div class="hero-glow" aria-hidden="true"></div>
@@ -155,11 +155,11 @@
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
             </div>
             <h3>Credentialed, not claimed.</h3>
-            <p>Every clinician profile is verified against the NPI registry and license records. Identity is confirmed by matching a government ID to a live selfie. "I work in healthcare" doesn't cut it here.</p>
+            <p>Every clinician is verified: an NPI is checked against the national registry, or a person on our team reviews your license. Identity is confirmed by matching a government ID to a selfie. "I work in healthcare" doesn't cut it here.</p>
             <dl class="pillar-detail">
               <div class="kv"><dt>Clinicians</dt><dd>NPI registry lookup</dd></div>
               <div class="kv"><dt>Licensed roles</dt><dd>State license photo review</dd></div>
-              <div class="kv"><dt>Students</dt><dd>.edu email verification</dd></div>
+              <div class="kv"><dt>Students</dt><dd>.edu email or student ID</dd></div>
               <div class="kv"><dt>Identity</dt><dd>ID-to-selfie match</dd></div>
             </dl>
           </article>
@@ -167,12 +167,12 @@
             <div class="pillar-icon" aria-hidden="true">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
-            <h3>Your calendar, not theirs.</h3>
-            <p>Mark your on-call days, night shifts, and golden weekends. Synapse surfaces matches whose free time actually overlaps with yours, then suggests times you're both genuinely free.</p>
+            <h3>Your schedule, not theirs.</h3>
+            <p>Mark the times you're usually free between shifts. When you match, Synapse compares both schedules and suggests times you're both genuinely free — neither of you sees the other's full schedule.</p>
             <dl class="pillar-detail">
-              <div class="kv"><dt>Schedule</dt><dd>On-call, off-shift, golden weekends</dd></div>
-              <div class="kv"><dt>Matching</dt><dd>Prioritized by real overlap</dd></div>
-              <div class="kv"><dt>Date times</dt><dd>Computed from where both calendars overlap</dd></div>
+              <div class="kv"><dt>Schedule</dt><dd>Mornings, afternoons, and evenings, day by day</dd></div>
+              <div class="kv"><dt>Find a time</dt><dd>The windows you're both free</dd></div>
+              <div class="kv"><dt>Privacy</dt><dd>Only shared windows are shown, never your schedule</dd></div>
             </dl>
           </article>
         </div>
@@ -189,29 +189,29 @@
           <li>
             <span class="step-num">01</span>
             <div>
-              <h3>Verify your license and your face.</h3>
-              <p>Upload a government ID and a quick selfie — compared by AWS Rekognition's facial similarity model. For clinicians, we then check your NPI and state license. Most profiles clear within 24 hours; borderline cases are reviewed by a person.</p>
+              <h3>Verify your credentials and your face.</h3>
+              <p>Confirm your role with your NPI, a license photo, or, if you're a student, a .edu email or student ID. Then add a government ID and a quick selfie — compared by AWS Rekognition's facial similarity model if you consent, or by a person if you'd rather. With the automatic match, NPI holders and students with a .edu email can be approved in minutes; a person reviews everyone else, usually within a day or two.</p>
             </div>
           </li>
           <li>
             <span class="step-num">02</span>
             <div>
               <h3>Build a profile that respects the work.</h3>
-              <p>Photos, prompts, and what kind of relationship you're looking for. Sign in with Apple, Google, or email — your credentials show up as a verified badge, not on the front of your profile.</p>
+              <p>Photos, prompts, and what kind of relationship you're looking for. Sign in with Apple, Google, or email — others see your role and a verified badge, never your license details or ID.</p>
             </div>
           </li>
           <li>
             <span class="step-num">03</span>
             <div>
               <h3>Mark your schedule.</h3>
-              <p>Add the days you're typically on-call, your off-shifts, and the weekends you're free. Synapse uses your schedule to prioritize matches with real overlap — not a 7pm Tuesday you'll never make.</p>
+              <p>In the Schedule tab, tick the mornings, afternoons, and evenings you're usually free. Once you match, Synapse uses both schedules to suggest times that actually work — not a 7pm Tuesday you'll never make.</p>
             </div>
           </li>
           <li>
             <span class="step-num">04</span>
             <div>
               <h3>Match, then meet.</h3>
-              <p>When there's a mutual signal, you get AI-generated icebreakers to start the conversation, plus venue ideas near a comfortable midpoint and times pulled straight from where your schedules overlap. From there, it's your call.</p>
+              <p>When there's a mutual signal, you get venue ideas near a comfortable midpoint and times pulled straight from where your schedules overlap, plus AI-generated icebreakers if your match has turned them on. From there, it's your call.</p>
             </div>
           </li>
         </ol>
@@ -232,28 +232,28 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 <div>
                   <strong>NPI registry lookup</strong>
-                  <span>Clinician NPIs are validated against the NPPES public registry maintained by CMS, including taxonomy, license number, and active status.</span>
+                  <span>Clinician NPIs are checked against the NPPES public registry maintained by CMS. The NPI must be active, and its name must match the name on your government ID.</span>
                 </div>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 <div>
-                  <strong>State board license checks</strong>
-                  <span>Nursing and other professional licenses are cross-referenced with the issuing state's board record. Expired or revoked licenses don't clear.</span>
+                  <strong>License review</strong>
+                  <span>If you verify with a license photo instead of an NPI, as most nurses do, a person on our team reviews it. Expired licenses don't clear.</span>
                 </div>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 <div>
                   <strong>Identity match</strong>
-                  <span>A government photo ID is compared to a live selfie using AWS Rekognition's facial similarity model. High-confidence matches auto-approve; borderline cases are reviewed by a person.</span>
+                  <span>A government photo ID is compared to a selfie. With your consent, AWS Rekognition's facial similarity model does the comparison: strong matches pass, and borderline cases go to a person. Or choose a person from the start.</span>
                 </div>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 <div>
                   <strong>Encrypted at rest, access-controlled</strong>
-                  <span>IDs and verification selfies are stored encrypted and access-controlled, retained only as long as needed to support your verified status.</span>
+                  <span>Government ID photos and verification selfies are stored encrypted and access-controlled, and deleted within 30 days of the verification decision, or right away if you delete your account.</span>
                 </div>
               </li>
             </ul>
@@ -264,7 +264,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 <div>
                   <strong>Profile photos stay separate from ID</strong>
-                  <span>Your name on the app must match the name on your credential. Your verification selfie and government ID are stored separately and never appear on your profile.</span>
+                  <span>The name on your NPI record or license must match your name. Your verification selfie and ID are stored separately and never appear on your profile.</span>
                 </div>
               </li>
               <li>
@@ -278,7 +278,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 <div>
                   <strong>Roles we verify</strong>
-                  <span>Physicians, residents, nurses, NPs, PAs, pharmacists, PTs, OTs, therapists, and healthcare students — each by the appropriate credential (NPI, state license, or .edu email).</span>
+                  <span>Physicians, residents, nurses, NPs, PAs, pharmacists, PTs, OTs, other licensed clinicians, and healthcare students — each by the appropriate credential (NPI, license photo, or, for students, a .edu email or student ID).</span>
                 </div>
               </li>
               <li>
@@ -299,7 +299,7 @@
       <div class="section-inner cta-band-inner">
         <p class="eyebrow">Launch offer</p>
         <h2 id="join-title">Join before launch.</h2>
-        <p class="cta-band-lede">The first 100 verified members get 3 months of Synapse+ free. We're launching first in Cleveland, with more cities to follow.</p>
+        <p class="cta-band-lede">The first 100 verified members get 3 months of Synapse+ free. We're launching in Cleveland, Boston, and the Research Triangle (Raleigh, Durham, and Chapel Hill) at the same time, with more cities to follow.</p>
         <div class="waitlist-block">
             <form class="waitlist-form" novalidate>
               <label class="sr-only" for="waitlist-email-2">Email address</label>
@@ -339,7 +339,7 @@
         </p>
         <p class="about-body">
           So we're building the dating app we wished we had: calm, credible, and respectful of time you don't
-          have much of. We're starting in Cleveland and adding cities as the community grows.
+          have much of. We're starting in Cleveland, Boston, and the Research Triangle, and adding cities as the community grows.
         </p>
       </div>
     </section>
@@ -354,7 +354,7 @@
             <ul class="plus-features">
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Triple your daily matches — 30 a day instead of 10.</span>
+                <span>Triple your daily swipes — 30 a day instead of 10.</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
