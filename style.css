@@ -875,3 +875,25 @@ h1 .accent {
 .cta-band-lede { font-size: 1.12rem; color: var(--text-secondary); margin: 0 0 28px; }
 .cta-band .waitlist-block { margin: 0 auto; max-width: 540px; }
 .cta-band .waitlist-form { justify-content: center; }
+
+.plan-label {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 1.5rem 0 0.75rem;
+}
+.plan-free li svg { color: var(--text-secondary); }
+.plan-safety { font-size: 0.9rem; color: var(--text-secondary); margin: 0; }
+.plus-price .plan-options { font-size: 0.95rem; color: var(--text); margin: 0 0 18px; line-height: 1.6; }
+.plan-save {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-gradient);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
