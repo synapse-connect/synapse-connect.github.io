@@ -585,6 +585,7 @@
       function setupPlaceField(form) {
         var input = form.querySelector('input[name="place"]');
         var list = form.querySelector('.waitlist-place-list');
+        var status = form.parentNode.querySelector('.waitlist-status');
         if (!input || !list) return;
         var matches = [];
         var active = -1;
@@ -650,8 +651,15 @@
           loadPlaces().then(function (places) {
             if (input.value !== query) return; // a newer keystroke is already handled
             matches = searchPlaces(places, query);
+            status.textContent = '';
+            status.className = 'waitlist-status';
             render();
-          }, function () { close(); });
+          }, function () {
+            // The list didn't load; the next keystroke tries again.
+            close();
+            status.textContent = 'Network error — please try again.';
+            status.className = 'waitlist-status is-error';
+          });
         }
 
         input.addEventListener('focus', function () { loadPlaces().catch(function () {}); });
@@ -665,8 +673,8 @@
           if (e.key === 'ArrowDown') { setActive(active + 1); e.preventDefault(); }
           else if (e.key === 'ArrowUp') { setActive(active - 1); e.preventDefault(); }
           else if (e.key === 'Enter') {
-            // Enter picks the highlighted (or only) match instead of submitting.
-            var i = active >= 0 ? active : (matches.length === 1 ? 0 : -1);
+            // Enter picks the highlighted (or else the first) match instead of submitting.
+            var i = active >= 0 ? active : (matches.length ? 0 : -1);
             if (i >= 0) { choose(i); e.preventDefault(); }
           }
           else if (e.key === 'Escape') { close(); e.preventDefault(); }
