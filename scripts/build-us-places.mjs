@@ -13,8 +13,9 @@ import { join } from 'node:path';
 
 const BASE = 'https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/';
 const NEW_ENGLAND = new Set(['CT', 'MA', 'ME', 'NH', 'RI', 'VT']);
-// Census type words after the name ("Cleveland city", "Durham CDP", "Pawtucket city (balance)").
-const TYPE_WORDS = / (city and borough|consolidated government|metropolitan government|metro government|unified government|urban county|charter township|city|town|village|borough|CDP|municipality|township|plantation|comunidad|zona urbana|corporation)( \(balance\))?$/;
+// Census type words after the name ("Cleveland city", "Durham CDP"); " (balance)" is stripped first.
+const TYPE_WORDS = / (city and borough|consolidated government|metropolitan government|metro government|unified government|urban county|charter township|city|town|village|borough|CDP|municipality|township|plantation|comunidad|zona urbana|corporation)$/;
+const BALANCE = / \(balance\)$/;
 
 async function readGazetteer(file) {
   const res = await fetch(BASE + file);
@@ -33,22 +34,21 @@ const towns = (await readGazetteer('2024_Gaz_cousubs_national.zip'))
   // Only real New England towns and cities, not gores, grants or unorganized territories.
   .filter((r) => NEW_ENGLAND.has(r.USPS) && / (town|city)$/.test(r.NAME));
 
+// Largest land area first; a name that is in both files keeps only its larger entry.
 const seen = new Set();
-const rows = [];
-for (const r of [...places, ...towns]) {
-  const name = r.NAME.replace(TYPE_WORDS, '').replace(/ \(balance\)$/, '');
-  const key = `${name}|${r.USPS}`;
-  if (seen.has(key)) continue; // a place wins over a town of the same name
+const out = [];
+for (const r of [...places, ...towns].sort((a, b) => b.ALAND - a.ALAND)) {
+  const key = `${r.NAME.replace(BALANCE, '').replace(TYPE_WORDS, '')}|${r.USPS}`;
+  if (seen.has(key)) continue;
   seen.add(key);
-  rows.push({ aland: +r.ALAND, line: `${key}|${r.GEOID}|${(+r.INTPTLAT).toFixed(2)}|${(+r.INTPTLONG).toFixed(2)}` });
+  out.push(`${key}|${r.GEOID}|${(+r.INTPTLAT).toFixed(2)}|${(+r.INTPTLONG).toFixed(2)}`);
 }
-const out = rows.sort((a, b) => b.aland - a.aland).map((r) => r.line);
 
 // Self-check before writing.
 const has = (n) => out.some((e) => e.startsWith(n + '|'));
 const must = ['Providence|RI', 'Cleveland|OH', 'Durham|NC', 'Chapel Hill|NC', 'Boston|MA', 'Lincoln|RI', 'Smithfield|RI', 'Brookline|MA', 'West Hartford|CT', 'Hanover|NH'];
 const missing = must.filter((n) => !has(n));
-const leftover = out.filter((e) => TYPE_WORDS.test(e.split('|')[0]) || / \(balance\)$/.test(e.split('|')[0]));
+const leftover = out.filter((e) => TYPE_WORDS.test(e.split('|')[0]) || BALANCE.test(e.split('|')[0]));
 const badRow = out.filter((e) => !/^[^|]{1,100}\|[A-Z]{2}\|(\d{7}|\d{10})\|-?\d+\.\d{2}\|-?\d+\.\d{2}$/.test(e));
 const json = JSON.stringify(out);
 if (missing.length || leftover.length || badRow.length || json.length > 1.5e6) {

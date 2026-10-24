@@ -589,12 +589,17 @@
         var matches = [];
         var active = -1;
         form.placeChoice = null;
+        form.placeInput = input;
+
+        function resetActive() {
+          active = -1;
+          input.removeAttribute('aria-activedescendant');
+        }
 
         function close() {
           list.hidden = true;
           input.setAttribute('aria-expanded', 'false');
-          input.removeAttribute('aria-activedescendant');
-          active = -1;
+          resetActive();
         }
 
         function setActive(i) {
@@ -616,8 +621,7 @@
 
         function render() {
           list.innerHTML = '';
-          active = -1;
-          input.removeAttribute('aria-activedescendant');
+          resetActive();
           if (!matches.length) {
             var none = document.createElement('li');
             none.setAttribute('role', 'option');
@@ -723,7 +727,7 @@
           if (!place) {
             status.textContent = PLACE_ERROR;
             status.className = 'waitlist-status is-error';
-            form.querySelector('input[name="place"]').focus();
+            form.placeInput.focus();
             return;
           }
 
