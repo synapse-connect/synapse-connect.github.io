@@ -301,6 +301,42 @@ h1 .accent {
   box-shadow: 0 0 0 3px var(--primary-tint);
 }
 
+/* City or town picker (synapse#540) */
+.waitlist-place {
+  position: relative;
+  flex: 1 1 240px;
+  min-width: 240px;
+}
+.waitlist-place .waitlist-input { width: 100%; min-width: 0; }
+.waitlist-place-list {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  text-align: left;
+  max-height: 280px;
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--text) 14%, transparent);
+}
+.waitlist-place-list li {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.waitlist-place-list li:hover,
+.waitlist-place-list li[aria-selected="true"] { background: var(--primary-tint); }
+.waitlist-place-list li.is-empty { color: var(--text-secondary); cursor: default; background: none; }
+
 /* Honeypot — hidden from humans, visible to bots that fill every field */
 .waitlist-hp {
   position: absolute;
