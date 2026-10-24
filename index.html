@@ -470,6 +470,23 @@
                 autocomplete="email"
                 required
               />
+              <div class="waitlist-place">
+                <label class="sr-only" for="waitlist-place-3">City or town</label>
+                <input
+                  id="waitlist-place-3"
+                  class="waitlist-input"
+                  type="text"
+                  name="place"
+                  placeholder="Your city or town"
+                  autocomplete="off"
+                  role="combobox"
+                  aria-autocomplete="list"
+                  aria-expanded="false"
+                  aria-controls="waitlist-place-list-3"
+                  required
+                />
+                <ul id="waitlist-place-list-3" class="waitlist-place-list" role="listbox" aria-label="Cities and towns" hidden></ul>
+              </div>
               <input
                 class="waitlist-hp"
                 type="text"
@@ -735,7 +752,7 @@
           if (!place) {
             status.textContent = PLACE_ERROR;
             status.className = 'waitlist-status is-error';
-            form.placeInput.focus();
+            if (form.placeInput) form.placeInput.focus();
             return;
           }
 
