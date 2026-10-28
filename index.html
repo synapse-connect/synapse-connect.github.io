@@ -26,7 +26,9 @@
   <meta name="twitter:image:alt" content="The Synapse app icon: a white neuron with a heart on a blue gradient" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Load the Google Fonts CSS without blocking first paint; text shows in the fallback face until it arrives. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" /></noscript>
   <link rel="stylesheet" href="style.css?v=2026-10-27c" />
   <script type="application/ld+json">
   {
@@ -139,27 +141,27 @@
           <div class="app-tour" role="region" aria-roledescription="carousel" aria-label="A look inside the Synapse app">
             <div class="app-tour-track" tabindex="0">
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="1 of 6: Discover">
-                <div class="app-tour-phone"><img src="assets/app/discover-priya.webp" width="520" height="1131" decoding="async" alt="Synapse app, discover screen. Swipe through verified healthcare workers near you."></div>
+                <div class="app-tour-phone"><img src="assets/app/discover-priya.webp" width="520" height="1131" fetchpriority="high" decoding="async" alt="Synapse app, discover screen. Swipe through verified healthcare workers near you."></div>
                 <figcaption>Swipe through verified healthcare workers near you.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="2 of 6: Profile">
-                <div class="app-tour-phone"><img src="assets/app/profile-marcus.webp" width="520" height="1131" decoding="async" alt="Synapse app, profile screen. Tap a card to see their full profile and prompts."></div>
+                <div class="app-tour-phone"><img src="assets/app/profile-marcus.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, profile screen. Tap a card to see their full profile and prompts."></div>
                 <figcaption>Tap a card to see their full profile and prompts.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="3 of 6: Schedule">
-                <div class="app-tour-phone"><img src="assets/app/schedule.webp" width="520" height="1131" decoding="async" alt="Synapse app, schedule screen. Mark when you’re free between shifts."></div>
+                <div class="app-tour-phone"><img src="assets/app/schedule.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, schedule screen. Mark when you’re free between shifts."></div>
                 <figcaption>Mark when you’re free between shifts.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="4 of 6: Find a time">
-                <div class="app-tour-phone"><img src="assets/app/times.webp" width="520" height="1131" decoding="async" alt="Synapse app, find a time screen. Synapse finds the times you’re both actually free."></div>
+                <div class="app-tour-phone"><img src="assets/app/times.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, find a time screen. Synapse finds the times you’re both actually free."></div>
                 <figcaption>Synapse finds the times you’re both actually free.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="5 of 6: Chat">
-                <div class="app-tour-phone"><img src="assets/app/chat.webp" width="520" height="1131" decoding="async" alt="Synapse app, chat screen. Chat, then turn it into a real date."></div>
+                <div class="app-tour-phone"><img src="assets/app/chat.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, chat screen. Chat, then turn it into a real date."></div>
                 <figcaption>Chat, then turn it into a real date.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="6 of 6: Matches">
-                <div class="app-tour-phone"><img src="assets/app/matches.webp" width="520" height="1131" decoding="async" alt="Synapse app, matches screen. All your matches and conversations in one place."></div>
+                <div class="app-tour-phone"><img src="assets/app/matches.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, matches screen. All your matches and conversations in one place."></div>
                 <figcaption>All your matches and conversations in one place.</figcaption>
               </figure>
             </div>
