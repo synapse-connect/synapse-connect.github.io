@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Synapse is a verified dating app for healthcare workers. Credentials checked against the NPI registry or reviewed by our team. Date times that fit around shift work." />
+  <meta name="description" content="Synapse is the verified dating app for nurses, doctors and healthcare workers. Credentials checked, and date times suggested around your shifts." />
   <meta name="theme-color" content="#FAFAF9" />
-  <title>Synapse — Dating for Healthcare Workers</title>
+  <title>Synapse — Dating App for Nurses, Doctors &amp; Healthcare Workers</title>
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <link rel="canonical" href="https://synapsematches.com/" />
-  <meta property="og:title" content="Synapse — Dating for Healthcare Workers" />
+  <meta property="og:title" content="Synapse — Dating App for Nurses, Doctors &amp; Healthcare Workers" />
   <meta property="og:description" content="A verified dating community for clinicians and care teams. Credentials checked. Schedules respected." />
   <meta property="og:image" content="https://synapsematches.com/og-image.png" />
-  <meta property="og:url" content="https://synapsematches.com" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="og:image:alt" content="The Synapse app icon: a white neuron with a heart on a blue gradient" />
+  <meta property="og:url" content="https://synapsematches.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Synapse" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- "summary" suits the square og-image; switch to summary_large_image with a 1200×630 image from synapse-design. -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Synapse — Dating App for Nurses, Doctors &amp; Healthcare Workers" />
+  <meta name="twitter:description" content="A verified dating community for clinicians and care teams. Credentials checked. Schedules respected." />
+  <meta name="twitter:image" content="https://synapsematches.com/og-image.png" />
+  <meta name="twitter:image:alt" content="The Synapse app icon: a white neuron with a heart on a blue gradient" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2026-10-18a" />
+  <!-- Load the Google Fonts CSS without blocking first paint; text shows in the fallback face until it arrives. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" /></noscript>
+  <link rel="stylesheet" href="style.css?v=2026-10-27c" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -28,11 +38,18 @@
         "@type": "Organization",
         "@id": "https://synapsematches.com/#org",
         "name": "Synapse Connect",
+        "alternateName": "Synapse",
         "legalName": "Synapse Connect LLC",
         "url": "https://synapsematches.com/",
         "logo": "https://synapsematches.com/og-image.png",
-        "email": "synapse@synapsematches.com",
-        "description": "Synapse is a verified dating app for healthcare workers, with credentials checked against the NPI registry or reviewed by our team, and date times suggested around shift work."
+        "email": "help@synapsematches.com",
+        "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "help@synapsematches.com" },
+        "areaServed": { "@type": "Country", "name": "United States" },
+        "description": "Synapse is a verified dating app for healthcare workers, with credentials checked against the NPI registry or reviewed by our team, and date times suggested around shift work.",
+        "founder": [
+          { "@type": "Person", "@id": "https://synapsematches.com/#founder-jay-patel", "name": "Jay Patel", "honorificSuffix": "PharmD, MS-ACI", "jobTitle": "Co-founder", "description": "Pharmacist" },
+          { "@type": "Person", "@id": "https://synapsematches.com/#founder-nishtha-gupta", "name": "Nishtha Gupta", "honorificSuffix": "MD", "jobTitle": "Co-founder", "description": "Physician" }
+        ]
       },
       {
         "@type": "WebSite",
@@ -46,6 +63,8 @@
   </script>
 </head>
 <body>
+  <!-- Cloudflare: show email addresses as plain text so crawlers and no-JS visitors can read them -->
+  <!--email_off-->
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a href="#top" class="brand" aria-label="Synapse home">
@@ -66,8 +85,8 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">For clinicians and care teams</p>
-          <h1 id="hero-title">Dating, designed for <span class="accent">your hours.</span></h1>
+          <h1 id="hero-title" class="eyebrow">The dating app for healthcare workers</h1>
+          <p class="hero-title">Dating, designed for <span class="accent">your hours.</span></p>
           <p class="lede">
             A verified community for nurses, physicians, pharmacists, PAs, therapists, healthcare students, and the people who keep
             hospitals running. Credentials checked. Schedules respected. Conversations that go somewhere.
@@ -115,34 +134,34 @@
             <p class="waitlist-note">Free to join · Personal email is fine · No spam</p>
           </div>
           <p class="founding-offer">The first 500 verified members get <strong>3 months of Synapse+ free</strong>.</p>
-          <p class="hero-meta">Founded by a pharmacist and a physician</p>
+          <p class="hero-meta">Founded by Jay Patel, PharmD, and Nishtha Gupta, MD</p>
         </div>
         <div class="hero-visual">
           <div class="hero-glow" aria-hidden="true"></div>
           <div class="app-tour" role="region" aria-roledescription="carousel" aria-label="A look inside the Synapse app">
             <div class="app-tour-track" tabindex="0">
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="1 of 6: Discover">
-                <div class="app-tour-phone"><img src="assets/app/discover-priya.webp" width="520" height="1131" decoding="async" alt="Synapse app, discover screen. Swipe through verified healthcare workers near you."></div>
+                <div class="app-tour-phone"><img src="assets/app/discover-priya.webp" width="520" height="1131" fetchpriority="high" decoding="async" alt="Synapse app, discover screen. Swipe through verified healthcare workers near you."></div>
                 <figcaption>Swipe through verified healthcare workers near you.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="2 of 6: Profile">
-                <div class="app-tour-phone"><img src="assets/app/profile-marcus.webp" width="520" height="1131" decoding="async" alt="Synapse app, profile screen. Tap a card to see their full profile and prompts."></div>
+                <div class="app-tour-phone"><img src="assets/app/profile-marcus.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, profile screen. Tap a card to see their full profile and prompts."></div>
                 <figcaption>Tap a card to see their full profile and prompts.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="3 of 6: Schedule">
-                <div class="app-tour-phone"><img src="assets/app/schedule.webp" width="520" height="1131" decoding="async" alt="Synapse app, schedule screen. Mark when you’re free between shifts."></div>
+                <div class="app-tour-phone"><img src="assets/app/schedule.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, schedule screen. Mark when you’re free between shifts."></div>
                 <figcaption>Mark when you’re free between shifts.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="4 of 6: Find a time">
-                <div class="app-tour-phone"><img src="assets/app/times.webp" width="520" height="1131" decoding="async" alt="Synapse app, find a time screen. Synapse finds the times you’re both actually free."></div>
+                <div class="app-tour-phone"><img src="assets/app/times.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, find a time screen. Synapse finds the times you’re both actually free."></div>
                 <figcaption>Synapse finds the times you’re both actually free.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="5 of 6: Chat">
-                <div class="app-tour-phone"><img src="assets/app/chat.webp" width="520" height="1131" decoding="async" alt="Synapse app, chat screen. Chat, then turn it into a real date."></div>
+                <div class="app-tour-phone"><img src="assets/app/chat.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, chat screen. Chat, then turn it into a real date."></div>
                 <figcaption>Chat, then turn it into a real date.</figcaption>
               </figure>
               <figure class="app-tour-slide" aria-roledescription="slide" aria-label="6 of 6: Matches">
-                <div class="app-tour-phone"><img src="assets/app/matches.webp" width="520" height="1131" decoding="async" alt="Synapse app, matches screen. All your matches and conversations in one place."></div>
+                <div class="app-tour-phone"><img src="assets/app/matches.webp" width="520" height="1131" loading="lazy" decoding="async" alt="Synapse app, matches screen. All your matches and conversations in one place."></div>
                 <figcaption>All your matches and conversations in one place.</figcaption>
               </figure>
             </div>
@@ -375,6 +394,18 @@
           So we're building the dating app we wished we had: calm, credible, and respectful of time you don't
           have much of.
         </p>
+        <ul class="founders" aria-label="Founders">
+          <li class="founder">
+            <p class="founder-name">Jay Patel</p>
+            <p class="founder-cred">PharmD, MS-ACI</p>
+            <p class="founder-role">Co-founder · Pharmacist</p>
+          </li>
+          <li class="founder">
+            <p class="founder-name">Nishtha Gupta</p>
+            <p class="founder-cred">MD</p>
+            <p class="founder-role">Co-founder · Physician</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -389,7 +420,7 @@
             <ul class="plus-features plan-free">
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Every member verified: NPI check and face match.</span>
+                <span>Every member verified: credential check and ID-to-selfie match.</span>
               </li>
               <li>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
@@ -453,6 +484,45 @@
       </div>
     </section>
 
+    <section class="section section-cream" id="faq" aria-labelledby="faq-title">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Questions, answered.</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Who can join Synapse?</h3>
+            <p>Synapse is for verified healthcare workers aged 18 and over: physicians, residents, nurses, NPs, PAs, pharmacists, PTs, OTs, other licensed clinicians, and healthcare students. Each person verifies with the credential that fits their role.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How does Synapse verify healthcare workers?</h3>
+            <p>Clinicians with an NPI are checked against the NPPES registry maintained by CMS. If you verify with a state license photo instead, as most nurses do, a person on our team reviews it. Students use a .edu email or student ID. Everyone also matches a government photo ID to a selfie.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does Synapse run background checks?</h3>
+            <p>No. We check professional credentials and confirm identity, but those checks don't reveal criminal history. Use your own judgment with everyone you meet. Blocking, reporting, and other safety tools are always free.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is Synapse free?</h3>
+            <p>Yes. Free covers everything you need to meet someone: 10 likes a day, every filter, unlimited messaging with matches, and suggested date times. Synapse+ is optional, at $24.99 a month, $59.99 for 3 months, or $119.99 a year, billed through the App Store. The first 500 verified members get 3 months of Synapse+ free.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can my matches see my work schedule?</h3>
+            <p>No. You mark the times you're usually free, and Synapse compares both schedules when you match. Your match only sees the windows you're both free, never your full schedule.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What happens to my ID and selfie?</h3>
+            <p>Government ID photos and verification selfies are stored encrypted and access-controlled, never appear on your profile, and are deleted within 30 days of the verification decision, or right away if you delete your account.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Where and when is Synapse launching?</h3>
+            <p>Synapse hasn't launched yet. Join the waitlist with your email and your city or town, and we'll email you when Synapse launches and when it opens near you. Where people sign up helps us decide where to launch next.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-paper cta-band" id="join-final" aria-labelledby="join-final-title">
       <div class="section-inner cta-band-inner">
         <p class="eyebrow">Get early access</p>
@@ -512,7 +582,7 @@
         <dl class="contact-grid">
           <div class="contact-item">
             <dt>General, privacy &amp; compliance, partnerships</dt>
-            <dd><a href="mailto:synapse@synapsematches.com">synapse@synapsematches.com</a></dd>
+            <dd><a href="mailto:help@synapsematches.com">help@synapsematches.com</a></dd>
           </div>
         </dl>
       </div>
@@ -535,13 +605,14 @@
           <li><a href="#how">How it works</a></li>
           <li><a href="#trust">Verification</a></li>
           <li><a href="#plus">Synapse+</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="mailto:synapse@synapsematches.com">Contact</a></li>
+          <li><a href="mailto:help@synapsematches.com">Contact</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
         </ul>
@@ -835,5 +906,6 @@
     })();
   </script>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf261370e2ad4e2380d12c57f0178c21"}'></script><!-- End Cloudflare Web Analytics -->
+<!--/email_off-->
 </body>
 </html>

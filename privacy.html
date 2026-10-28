@@ -10,21 +10,25 @@
   <link rel="canonical" href="https://synapsematches.com/privacy.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2026-10-18a" />
+  <!-- Load the Google Fonts CSS without blocking first paint; text shows in the fallback face until it arrives. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" /></noscript>
+  <link rel="stylesheet" href="style.css?v=2026-10-27c" />
 </head>
 <body>
+  <!-- Cloudflare: show email addresses as plain text so crawlers and no-JS visitors can read them -->
+  <!--email_off-->
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a href="index.html" class="brand">
+      <a href="/" class="brand">
         <img src="icons/brand-64.png" alt="" class="brand-mark" aria-hidden="true" />
         <span>Synapse</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#why">Why Synapse</a></li>
-        <li><a href="index.html#how">How it works</a></li>
-        <li><a href="index.html#trust">Verification</a></li>
-        <li><a class="nav-cta" href="index.html#waitlist">Get early access</a></li>
+        <li><a href="/#why">Why Synapse</a></li>
+        <li><a href="/#how">How it works</a></li>
+        <li><a href="/#trust">Verification</a></li>
+        <li><a class="nav-cta" href="/#waitlist">Get early access</a></li>
       </ul>
     </nav>
   </header>
@@ -36,7 +40,7 @@
       <p class="legal-meta">Last updated: October 24, 2026</p>
 
       <h2>1. Who we are</h2>
-      <p>Synapse Connect LLC (&quot;Synapse,&quot; &quot;we,&quot; &quot;us&quot;) runs the Synapse dating app for healthcare workers. This policy explains what we collect, why, who we share it with, how long we keep it, and the choices you have. Contact: support@synapsematches.com.</p>
+      <p>Synapse Connect LLC (&quot;Synapse,&quot; &quot;we,&quot; &quot;us&quot;) runs the Synapse dating app for healthcare workers. This policy explains what we collect, why, who we share it with, how long we keep it, and the choices you have. Contact: help@synapsematches.com.</p>
 
       <h2>2. What we collect</h2>
       <p>You give us:</p>
@@ -125,14 +129,14 @@
         <li>Withdraw consent: face matching and AI conversation starters can be turned off in Settings; location and notifications in your phone&#x27;s settings.</li>
         <li>Depending on where you live (for example California, Colorado, Connecticut, Virginia, or the EU/UK), you may have rights to know, access, correct, delete and port your data, and to limit the use of sensitive information. We do not sell or share data for targeted advertising, so there is nothing to opt out of there.</li>
       </ul>
-      <p>To use a right, email support@synapsematches.com. If we decline your request, you can appeal by replying to our answer; if we still decline, you can contact your state attorney general or data protection authority.</p>
+      <p>To use a right, email help@synapsematches.com. If we decline your request, you can appeal by replying to our answer; if we still decline, you can contact your state attorney general or data protection authority.</p>
       <p>If EU or UK law applies to you: we process your data to provide the service you signed up for (contract), with your consent where we ask for it (face matching, AI conversation starters, location), for our legitimate interest in keeping members safe and preventing fraud, and where the law requires it. You can complain to your local data protection authority.</p>
 
       <h2>9. Security</h2>
       <p>Data is encrypted in transit and at rest. ID documents sit in a private storage area only our verification system can read, and database rules limit what each member can see. No system is perfectly secure; if a breach affects your information, we will notify you and the authorities as the law requires.</p>
 
       <h2>10. Children</h2>
-      <p>Synapse is only for people 18 and older. We don&#x27;t knowingly collect information from anyone under 18, and we delete it if we learn we have. Tell us at support@synapsematches.com if you think a minor is using Synapse.</p>
+      <p>Synapse is only for people 18 and older. We don&#x27;t knowingly collect information from anyone under 18, and we delete it if we learn we have. Tell us at help@synapsematches.com if you think a minor is using Synapse.</p>
 
       <h2>11. Where data is processed</h2>
       <p>Synapse is based in the United States, and your information is stored and processed there. If you use Synapse from outside the US, your information is transferred to the US.</p>
@@ -142,7 +146,7 @@
 
       <h2>13. Contact</h2>
       <p>Synapse Connect LLC</p>
-      <p>Email: support@synapsematches.com</p>
+      <p>Email: help@synapsematches.com</p>
     </div>
   </main>
 
@@ -158,17 +162,17 @@
       <div class="footer-col">
         <h4>Product</h4>
         <ul>
-          <li><a href="index.html#why">Why Synapse</a></li>
-          <li><a href="index.html#how">How it works</a></li>
-          <li><a href="index.html#trust">Verification</a></li>
-          <li><a href="index.html#plus">Synapse+</a></li>
+          <li><a href="/#why">Why Synapse</a></li>
+          <li><a href="/#how">How it works</a></li>
+          <li><a href="/#trust">Verification</a></li>
+          <li><a href="/#plus">Synapse+</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="mailto:support@synapsematches.com">Contact</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="mailto:help@synapsematches.com">Contact</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
         </ul>
@@ -180,5 +184,6 @@
     </div>
   </footer>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf261370e2ad4e2380d12c57f0178c21"}'></script><!-- End Cloudflare Web Analytics -->
+<!--/email_off-->
 </body>
 </html>
