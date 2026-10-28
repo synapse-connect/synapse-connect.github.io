@@ -221,7 +221,19 @@ p {
   background: var(--text-secondary);
 }
 
-h1 .accent {
+/* The hero's big line is a <p> styled as a display heading; the H1 is the eyebrow above it. */
+.hero-title {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+h1.eyebrow { line-height: 1.6; }
+
+.hero-title .accent {
   font-style: italic;
   color: var(--primary-dark);
   font-weight: 400;
