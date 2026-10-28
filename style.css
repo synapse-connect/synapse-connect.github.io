@@ -221,7 +221,19 @@ p {
   background: var(--text-secondary);
 }
 
-h1 .accent {
+/* The hero's big line is a <p> styled as a display heading; the H1 is the eyebrow above it. */
+.hero-title {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+h1.eyebrow { line-height: 1.6; }
+
+.hero-title .accent {
   font-style: italic;
   color: var(--primary-dark);
   font-weight: 400;
@@ -300,6 +312,42 @@ h1 .accent {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-tint);
 }
+
+/* City or town picker (synapse#540) */
+.waitlist-place {
+  position: relative;
+  flex: 1 1 240px;
+  min-width: 240px;
+}
+.waitlist-place .waitlist-input { width: 100%; min-width: 0; }
+.waitlist-place-list {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  text-align: left;
+  max-height: 280px;
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--text) 14%, transparent);
+}
+.waitlist-place-list li {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.waitlist-place-list li:hover,
+.waitlist-place-list li[aria-selected="true"] { background: var(--primary-tint); }
+.waitlist-place-list li.is-empty { color: var(--text-secondary); cursor: default; background: none; }
 
 /* Honeypot — hidden from humans, visible to bots that fill every field */
 .waitlist-hp {
@@ -759,6 +807,38 @@ h1 .accent {
 }
 .about-body + .about-body { margin-top: 1.25rem; }
 
+.founders {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+@media (max-width: 560px) { .founders { grid-template-columns: 1fr; gap: 24px; } }
+.founder-name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.founder-cred {
+  margin: 6px 0 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--primary-dark);
+}
+.founder-role {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -869,6 +949,15 @@ h1 .accent {
 .legal-page main p { font-size: 1.04rem; color: var(--text-secondary); }
 
 /* Signup bands repeated down the page */
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 56px;
+}
+@media (max-width: 760px) { .faq-list { grid-template-columns: 1fr; gap: 32px; } }
+.faq-item h3 { font-size: 1.25rem; }
+.faq-item p { margin: 0; color: var(--text-secondary); line-height: 1.6; }
+
 .section.cta-band { padding-top: clamp(64px, 8vw, 100px); padding-bottom: clamp(64px, 8vw, 100px); }
 .cta-band-inner { max-width: 620px; text-align: center; }
 .cta-band h2 { margin-bottom: 1rem; }
