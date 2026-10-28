@@ -949,6 +949,15 @@ h1.eyebrow { line-height: 1.6; }
 .legal-page main p { font-size: 1.04rem; color: var(--text-secondary); }
 
 /* Signup bands repeated down the page */
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 56px;
+}
+@media (max-width: 760px) { .faq-list { grid-template-columns: 1fr; gap: 32px; } }
+.faq-item h3 { font-size: 1.25rem; }
+.faq-item p { margin: 0; color: var(--text-secondary); line-height: 1.6; }
+
 .section.cta-band { padding-top: clamp(64px, 8vw, 100px); padding-bottom: clamp(64px, 8vw, 100px); }
 .cta-band-inner { max-width: 620px; text-align: center; }
 .cta-band h2 { margin-bottom: 1rem; }
