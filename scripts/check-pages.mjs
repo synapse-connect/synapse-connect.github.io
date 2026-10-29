@@ -10,6 +10,7 @@ const PAGES = [
   { file: 'privacy.html', url: 'https://synapsematches.com/privacy.html' },
   { file: 'terms.html', url: 'https://synapsematches.com/terms.html' },
   { file: '404.html', url: 'https://synapsematches.com/404.html' },
+  { file: 'verification/index.html', url: 'https://synapsematches.com/verification/' },
 ];
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');

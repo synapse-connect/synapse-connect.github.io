@@ -986,3 +986,34 @@ h1.eyebrow { line-height: 1.6; }
   font-size: 0.75rem;
   font-weight: 600;
 }
+
+/* Roles table (verification page): scrolls sideways inside its wrapper on narrow screens, never the page. */
+.roles-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.roles-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.roles-table th,
+.roles-table td {
+  padding: 18px 24px 18px 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.roles-table thead th {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.roles-table tbody th { font-weight: 500; color: var(--text); }
+.roles-table td { color: var(--text-secondary); }
+.roles-table tbody tr:last-child th,
+.roles-table tbody tr:last-child td { border-bottom: 0; }
+
+/* A page's H1 as the lead of a .section-head (verification page). */
+.section-head h1 { margin-bottom: 1.25rem; }
