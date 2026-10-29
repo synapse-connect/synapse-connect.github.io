@@ -875,6 +875,8 @@ h1.eyebrow { line-height: 1.6; }
   gap: 40px;
 }
 @media (max-width: 720px) { .footer-inner { grid-template-columns: 1fr; gap: 32px; } }
+/* Pages with a fourth footer child (the "Synapse for" column) get a fourth track. */
+@media (min-width: 721px) { .footer-inner:has(> :nth-child(4)) { grid-template-columns: 1.5fr 1fr 1fr 1fr; } }
 
 .footer-brand {
   display: inline-flex;
@@ -986,3 +988,55 @@ h1.eyebrow { line-height: 1.6; }
   font-size: 0.75rem;
   font-weight: 600;
 }
+
+/* Roles table (verification page): scrolls sideways inside its wrapper on narrow screens, never the page. */
+.roles-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.roles-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.roles-table th,
+.roles-table td {
+  padding: 18px 24px 18px 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.roles-table thead th {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.roles-table tbody th { font-weight: 500; color: var(--text); }
+.roles-table td { color: var(--text-secondary); }
+.roles-table tbody tr:last-child th,
+.roles-table tbody tr:last-child td { border-bottom: 0; }
+
+/* A page's H1 as the lead of a .section-head. */
+.section-head h1 { margin-bottom: 1.25rem; }
+
+/* Intro button row, bullet list and inline text link in prose sections. */
+.section-head .cta-row { align-items: center; margin: 1.75rem 0 0; }
+.section-head .cta-row .hero-meta { font-size: 0.9rem; }
+.section-head .cta-row .hero-meta::before { flex: none; }
+.prose-list { margin: 0 0 1rem; padding-left: 1.25rem; }
+.prose-list li { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.6; margin-bottom: 0.75rem; }
+.prose-list li strong { color: var(--text); font-weight: 600; }
+.text-link { color: var(--primary-dark); font-weight: 500; }
+/* On the dark Verification band the dark-blue link reads at about 2.9:1; use the light tint there. */
+.section-ink .text-link { color: var(--primary-light); }
+.section-ink .text-link:hover { color: var(--white); }
+
+/* Guide pages (/guides/): a single reading column. Every rule is scoped under .guide-body. */
+/* 54ch of Inter holds about 68 characters per line. */
+.guide-body { max-width: 54ch; margin: 0 auto; }
+.guide-body h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.1; margin-bottom: 1rem; }
+.guide-body .guide-byline { font-size: 0.9rem; margin-bottom: 2rem; }
+.guide-body .guide-byline a { color: var(--text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.guide-body h2 { font-size: clamp(1.45rem, 2.6vw, 1.9rem); margin: 2.75rem 0 0.75rem; }
+.guide-body p { line-height: 1.7; }

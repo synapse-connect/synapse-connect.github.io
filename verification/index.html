@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Every Synapse member is a verified healthcare worker. Here's exactly what we check: NPI or license, a government ID matched to a selfie, and what we delete." />
+  <meta name="theme-color" content="#FAFAF9" />
+  <title>How Synapse Verifies Healthcare Workers: NPI, License, ID</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <link rel="canonical" href="https://synapsematches.com/verification/" />
+  <meta property="og:title" content="How Synapse Verifies Healthcare Workers: NPI, License, ID" />
+  <meta property="og:description" content="Every Synapse member is a verified healthcare worker. Here's exactly what we check: NPI or license, a government ID matched to a selfie, and what we delete." />
+  <meta property="og:image" content="https://synapsematches.com/ds/icons/og-share.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Synapse share card: &quot;Dating, designed for your hours.&quot; beside the white neuron mark on a blue gradient" />
+  <meta property="og:url" content="https://synapsematches.com/verification/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Synapse" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Synapse Verifies Healthcare Workers: NPI, License, ID" />
+  <meta name="twitter:description" content="Every Synapse member is a verified healthcare worker. Here's exactly what we check: NPI or license, a government ID matched to a selfie, and what we delete." />
+  <meta name="twitter:image" content="https://synapsematches.com/ds/icons/og-share.png" />
+  <meta name="twitter:image:alt" content="Synapse share card: &quot;Dating, designed for your hours.&quot; beside the white neuron mark on a blue gradient" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Load the Google Fonts CSS without blocking first paint; text shows in the fallback face until it arrives. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" /></noscript>
+  <link rel="stylesheet" href="/style.css?v=2026-10-28b" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "How Synapse verifies every healthcare worker",
+        "url": "https://synapsematches.com/verification/",
+        "description": "Every Synapse member is a verified healthcare worker. Here's exactly what we check: NPI or license, a government ID matched to a selfie, and what we delete.",
+        "isPartOf": { "@id": "https://synapsematches.com/#website" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://synapsematches.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Verification", "item": "https://synapsematches.com/verification/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Cloudflare: show email addresses as plain text so crawlers and no-JS visitors can read them -->
+  <!--email_off-->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="/" class="brand">
+        <img src="/icons/brand-64.png" alt="" class="brand-mark" aria-hidden="true" />
+        <span>Synapse</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#why">Why Synapse</a></li>
+        <li><a href="/#how">How it works</a></li>
+        <li><a href="/#trust">Verification</a></li>
+        <li><a class="nav-cta" href="/#waitlist">Get early access</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section section-paper" aria-labelledby="verification-title">
+      <div class="section-inner">
+        <div class="section-head">
+          <h1 id="verification-title">How Synapse verifies every healthcare worker</h1>
+          <p>On most dating apps, "verified" means your selfie looks like your photos. On Synapse, it also means a credential was checked: your NPI against the national registry, or your license by a person on our team. Here's exactly what happens.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="steps" aria-labelledby="steps-title">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2 id="steps-title">The steps</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <div>
+              <h3>Pick the credential that fits your role.</h3>
+              <p>That's an NPI for most physicians, residents, NPs, PAs and pharmacists, a state license photo for most nurses and other licensed roles, or a .edu email or student ID for healthcare students.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <div>
+              <h3>We check the credential.</h3>
+              <p>NPIs are looked up in the NPPES registry maintained by CMS, and must be active and match the name on your ID. Licenses are reviewed by a person, and expired ones don't clear.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <div>
+              <h3>You confirm it's you.</h3>
+              <p>You take a government photo ID and a selfie. With your consent, AWS Rekognition's facial similarity model compares them: strong matches pass, and borderline ones go to a person. Or choose a person from the start.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">04</span>
+            <div>
+              <h3>You get a decision.</h3>
+              <p>With the automatic comparison, NPI holders and students with a .edu email can be approved in minutes. A person reviews everyone else, usually within a day or two. If it doesn't clear, you're told why (the credential, the identity match, or both), so you know exactly what to send again.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">05</span>
+            <div>
+              <h3>Your documents are deleted.</h3>
+              <p>Your ID photo and verification selfie are deleted within 30 days of the decision.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="roles" aria-labelledby="roles-title">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2 id="roles-title">What each role verifies with</h2>
+        </div>
+        <div class="roles-table-wrap" role="region" aria-labelledby="roles-title" tabindex="0">
+          <table class="roles-table">
+            <thead>
+              <tr>
+                <th scope="col">Role</th>
+                <th scope="col">Credential</th>
+                <th scope="col">Checked by</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Physicians, residents, NPs, PAs and pharmacists</th>
+                <td>An NPI. A license photo works too.</td>
+                <td>An NPI is checked against the registry; a license photo is reviewed by a person</td>
+              </tr>
+              <tr>
+                <th scope="row">Nurses (RN, LPN/LVN)</th>
+                <td>A state license photo, or an NPI if you have one</td>
+                <td>A license photo is reviewed by a person; an NPI is checked against the registry</td>
+              </tr>
+              <tr>
+                <th scope="row">PTs, OTs and other licensed clinicians</th>
+                <td>An NPI or a license photo</td>
+                <td>An NPI is checked against the registry; a license photo is reviewed by a person</td>
+              </tr>
+              <tr>
+                <th scope="row">Healthcare students</th>
+                <td>A .edu email or student ID</td>
+                <td>A .edu email is confirmed automatically; a student ID is reviewed by a person</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="privacy" aria-labelledby="privacy-title">
+      <div class="section-inner section-prose">
+        <h2 id="privacy-title">What your matches see, and what they don't</h2>
+        <p>Matches see your role and a verified badge. They never see your NPI, license, ID or verification selfie. Those are stored separately from your profile photos, encrypted and with access restricted, and they're deleted within 30 days of the decision, or right away if you delete your account.</p>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="limits" aria-labelledby="limits-title">
+      <div class="section-inner section-prose">
+        <h2 id="limits-title">What verification doesn't do</h2>
+        <p>We check professional credentials and confirm identity. We don't run background checks, and these checks don't reveal criminal history. Use your own judgment with everyone you meet. Blocking, reporting and other safety tools are always free.</p>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="faq" aria-labelledby="faq-title">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2 id="faq-title">Questions about verification</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Why does Synapse need my ID?</h3>
+            <p>To confirm the person holding the credential is you. A license or NPI alone doesn't prove that.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I skip the automatic face comparison?</h3>
+            <p>Yes. Choose a person instead. It takes longer, usually a day or two.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What if my name changed?</h3>
+            <p>The name on your NPI record or license has to match your ID. If they differ, contact help@synapsematches.com before you verify.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I delete my documents?</h3>
+            <p>Delete your account in the app and we remove your profile, messages, photos and verification documents within 30 days, except where the law requires us to keep them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper cta-band" id="join" aria-labelledby="join-title">
+      <div class="section-inner cta-band-inner">
+        <h2 id="join-title">Get early access</h2>
+        <div class="waitlist-block">
+            <form class="waitlist-form" novalidate>
+              <label class="sr-only" for="waitlist-email-v">Email address</label>
+              <input
+                id="waitlist-email-v"
+                class="waitlist-input"
+                type="email"
+                name="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+                required
+              />
+              <div class="waitlist-place">
+                <label class="sr-only" for="waitlist-place-v">City or town</label>
+                <input
+                  id="waitlist-place-v"
+                  class="waitlist-input"
+                  type="text"
+                  name="place"
+                  placeholder="Your city or town"
+                  autocomplete="off"
+                  role="combobox"
+                  aria-autocomplete="list"
+                  aria-expanded="false"
+                  aria-controls="waitlist-place-list-v"
+                  required
+                />
+                <ul id="waitlist-place-list-v" class="waitlist-place-list" role="listbox" aria-label="Cities and towns" hidden></ul>
+              </div>
+              <input
+                class="waitlist-hp"
+                type="text"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+              <button class="btn btn-primary btn-arrow" type="submit">Get early access</button>
+            </form>
+            <p class="waitlist-status" role="status" aria-live="polite"></p>
+            <p class="waitlist-note">Free to join · Personal email is fine · No spam</p>
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">
+          <img src="/icons/brand-64.png" alt="" class="footer-mark" aria-hidden="true" />
+          Synapse Connect
+        </p>
+        <p class="footer-tag">A verified dating community for the people who keep healthcare running.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/#why">Why Synapse</a></li>
+          <li><a href="/#how">How it works</a></li>
+          <li><a href="/#trust">Verification</a></li>
+          <li><a href="/#plus">Synapse+</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Synapse for</h4>
+        <ul>
+          <li><a href="/nurses/">For nurses</a></li>
+          <li><a href="/doctors/">For doctors</a></li>
+          <li><a href="/verification/">Verification</a></li>
+          <li><a href="/guides/dating-with-12-hour-shifts/">Guides</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/#about">About</a></li>
+          <li><a href="mailto:help@synapsematches.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Synapse Connect. All rights reserved.</p>
+      <p>Made with care for the people who care.</p>
+    </div>
+  </footer>
+
+  <script src="/waitlist.js"></script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf261370e2ad4e2380d12c57f0178c21"}'></script><!-- End Cloudflare Web Analytics -->
+<!--/email_off-->
+</body>
+</html>

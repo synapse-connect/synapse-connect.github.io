@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://synapsematches.com/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://synapsematches.com/privacy.html</loc>
@@ -11,5 +11,21 @@
   <url>
     <loc>https://synapsematches.com/terms.html</loc>
     <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://synapsematches.com/verification/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://synapsematches.com/nurses/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://synapsematches.com/doctors/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://synapsematches.com/guides/dating-with-12-hour-shifts/</loc>
+    <lastmod>2026-10-28</lastmod>
   </url>
 </urlset>
