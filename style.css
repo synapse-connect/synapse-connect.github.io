@@ -1022,7 +1022,7 @@ h1.eyebrow { line-height: 1.6; }
 .section-head .cta-row { align-items: center; margin: 1.75rem 0 0; }
 .section-head .cta-row .hero-meta { font-size: 0.9rem; }
 .section-head .cta-row .hero-meta::before { flex: none; }
-.section-prose ul { margin: 0 0 1rem; padding-left: 1.25rem; }
-.section-prose li { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.6; margin-bottom: 0.75rem; }
-.section-prose li strong { color: var(--text); font-weight: 600; }
+.prose-list { margin: 0 0 1rem; padding-left: 1.25rem; }
+.prose-list li { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.6; margin-bottom: 0.75rem; }
+.prose-list li strong { color: var(--text); font-weight: 600; }
 .text-link { color: var(--primary-dark); font-weight: 500; }
