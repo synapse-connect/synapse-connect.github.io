@@ -875,6 +875,8 @@ h1.eyebrow { line-height: 1.6; }
   gap: 40px;
 }
 @media (max-width: 720px) { .footer-inner { grid-template-columns: 1fr; gap: 32px; } }
+/* Pages with a fourth footer child (the "Synapse for" column) get a fourth track. */
+@media (min-width: 721px) { .footer-inner:has(> :nth-child(4)) { grid-template-columns: 1.5fr 1fr 1fr 1fr; } }
 
 .footer-brand {
   display: inline-flex;
@@ -1026,6 +1028,9 @@ h1.eyebrow { line-height: 1.6; }
 .prose-list li { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.6; margin-bottom: 0.75rem; }
 .prose-list li strong { color: var(--text); font-weight: 600; }
 .text-link { color: var(--primary-dark); font-weight: 500; }
+/* On the dark Verification band the dark-blue link reads at about 2.9:1; use the light tint there. */
+.section-ink .text-link { color: var(--primary-light); }
+.section-ink .text-link:hover { color: var(--white); }
 
 /* Guide pages (/guides/): a single reading column. Every rule is scoped under .guide-body. */
 /* 54ch of Inter holds about 68 characters per line. */
