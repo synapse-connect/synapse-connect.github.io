@@ -139,8 +139,8 @@ for (const { file, url } of PAGES) {
   }
 
   const hasBlock = tags.some((t) => (t.attrs.class || '').split(/\s+/).includes('waitlist-block'));
-  const loadsShared = tags.some((t) => t.name === 'script' && /^\/waitlist\.js(?:\?.*)?$/.test(t.attrs.src || ''));
-  if (hasBlock && !loadsShared) fail(file, '.waitlist-block but no /waitlist.js');
+  const sharedLoads = tags.filter((t) => t.name === 'script' && /^\/waitlist\.js(?:\?.*)?$/.test(t.attrs.src || '')).length;
+  if (hasBlock && sharedLoads !== 1) fail(file, `.waitlist-block but ${sharedLoads} /waitlist.js scripts, expected exactly 1`);
   if (html.includes(ENDPOINT)) fail(file, 'contains join-waitlist endpoint');
 
   for (const t of tags) {
