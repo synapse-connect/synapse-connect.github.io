@@ -1017,10 +1017,10 @@ h1.eyebrow { line-height: 1.6; }
 .roles-table tbody tr:last-child th,
 .roles-table tbody tr:last-child td { border-bottom: 0; }
 
-/* A page's H1 as the lead of a .section-head (verification page). */
+/* A page's H1 as the lead of a .section-head. */
 .section-head h1 { margin-bottom: 1.25rem; }
 
-/* Role pages (nurses): intro button row, bullet list and inline text link in prose sections. */
+/* Intro button row, bullet list and inline text link in prose sections. */
 .section-head .cta-row { align-items: center; margin: 1.75rem 0 0; }
 .section-head .cta-row .hero-meta { font-size: 0.9rem; }
 .section-head .cta-row .hero-meta::before { flex: none; }
