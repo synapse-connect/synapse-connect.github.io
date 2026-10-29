@@ -12,6 +12,7 @@ const PAGES = [
   { file: '404.html', url: 'https://synapsematches.com/404.html' },
   { file: 'verification/index.html', url: 'https://synapsematches.com/verification/' },
   { file: 'nurses/index.html', url: 'https://synapsematches.com/nurses/' },
+  { file: 'doctors/index.html', url: 'https://synapsematches.com/doctors/' },
 ];
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
