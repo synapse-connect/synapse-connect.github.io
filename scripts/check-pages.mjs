@@ -13,6 +13,8 @@ const PAGES = [
   { file: 'verification/index.html', url: 'https://synapsematches.com/verification/' },
   { file: 'nurses/index.html', url: 'https://synapsematches.com/nurses/' },
   { file: 'doctors/index.html', url: 'https://synapsematches.com/doctors/' },
+  { file: 'pharmacists/index.html', url: 'https://synapsematches.com/pharmacists/' },
+  { file: 'healthcare-students/index.html', url: 'https://synapsematches.com/healthcare-students/' },
   { file: 'guides/dating-with-12-hour-shifts/index.html', url: 'https://synapsematches.com/guides/dating-with-12-hour-shifts/' },
 ];
 
