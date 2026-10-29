@@ -1017,3 +1017,12 @@ h1.eyebrow { line-height: 1.6; }
 
 /* A page's H1 as the lead of a .section-head (verification page). */
 .section-head h1 { margin-bottom: 1.25rem; }
+
+/* Role pages (nurses): intro button row, bullet list and inline text link in prose sections. */
+.section-head .cta-row { align-items: center; margin: 1.75rem 0 0; }
+.section-head .cta-row .hero-meta { font-size: 0.9rem; }
+.section-head .cta-row .hero-meta::before { flex: none; }
+.section-prose ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+.section-prose li { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.6; margin-bottom: 0.75rem; }
+.section-prose li strong { color: var(--text); font-weight: 600; }
+.text-link { color: var(--primary-dark); font-weight: 500; }
