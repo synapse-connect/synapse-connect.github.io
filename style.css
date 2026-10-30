@@ -1,34 +1,16 @@
 :root {
-  /* Colours come from the Synapse Design System (light theme), under its token names.
-     Nothing else in this file writes a colour value. */
-  --primary: #5C73FF;
-  --primary-dark: #3A50E0;
-  --primary-light: #8B9AFF;
-  --primary-tint: #EEF1FF;
-  --brand-grad-hi: #B1B8FC;
-  --brand-grad-mid: #8F99FB;
-  --brand-grad-lo: #6D7AFA;
-  --brand-gradient: linear-gradient(180deg, var(--brand-grad-hi) 0%, var(--brand-grad-mid) 50%, var(--brand-grad-lo) 100%);
-  --background: #FAFAF9;
-  --surface: #F5F5F4;
-  --text: #1C1917;
-  --text-secondary: #78716C;
-  --tab-inactive: #A8A29E;
-  --border: #E7E5E4;
-  --error: #EF4444;
-  --white: #FFFFFF;
-  --black: #000000;
-  --radius: 12px;
-  --radius-lg: 20px;
-  --radius-pill: 999px;
-  --shadow-subtle: 0 1px 4px color-mix(in srgb, var(--black) 4%, transparent);
-  --shadow-card: 0 2px 8px color-mix(in srgb, var(--black) 8%, transparent);
-  --shadow-raised: 0 4px 12px color-mix(in srgb, var(--black) 15%, transparent);
+  /* Colours, the brand gradient, shadows and radii come from the Synapse Design System:
+     /ds/css/tokens.css, linked before this file, with its dark theme. Nothing in this
+     file writes a colour value; scripts/check-pages.mjs fails if one appears. */
+  --ink-fixed: var(--on-gradient); /* near-black in both themes: the phone bezel and drop shadows */
   --maxw: 1180px;
   --maxw-prose: 720px;
   --serif: "Fraunces", "Iowan Old Style", "Apple Garamond", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
 }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 * { box-sizing: border-box; }
 
@@ -118,6 +100,7 @@ p {
 }
 
 .brand {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -153,18 +136,45 @@ p {
 .nav-links a:hover { color: var(--text); text-decoration: none; }
 
 .nav-cta {
+  white-space: nowrap;
   padding: 9px 18px;
   border-radius: var(--radius-pill);
-  background: var(--text);
-  color: var(--white) !important;
+  background: var(--cta);
+  color: var(--on-primary) !important;
   font-size: 0.9rem;
   font-weight: 500;
 }
-.nav-cta:hover { background: var(--primary-dark); text-decoration: none; }
+.nav-cta:hover { background: var(--action-pressed); text-decoration: none; }
+
+/* Sun/moon theme switch (theme.js). It sits after the CTA, so the phone rule below keeps both. */
+.nav-links .nav-theme { margin-left: -14px; display: flex; align-items: center; height: 24px; } /* the 44px button overflows its slot, so the header keeps its height */
+.nav-links .nav-theme[hidden] { display: none; }
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s;
+}
+.theme-toggle:hover { color: var(--text); background: var(--surface); }
+.theme-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.theme-toggle svg { display: block; }
+.theme-toggle .icon-sun,
+.theme-toggle[aria-pressed="true"] .icon-moon { display: none; }
+.theme-toggle[aria-pressed="true"] .icon-sun { display: block; }
 
 @media (max-width: 720px) {
-  .nav-links li:not(:last-child) { display: none; }
+  .nav-links li:not(:nth-last-child(-n+2)) { display: none; }
   .nav { padding: 14px 20px; }
+  .nav-links { gap: 14px; }
+  .nav-links .nav-theme { margin-left: -4px; }
 }
 
 .hero {
@@ -181,7 +191,7 @@ p {
   right: -10%;
   width: 720px;
   height: 720px;
-  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--brand-grad-hi) 30%, transparent) 0%, color-mix(in srgb, var(--brand-grad-hi) 14%, transparent) 35%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--brand-grad-hi) 30%, var(--background)) 0%, color-mix(in srgb, var(--brand-grad-hi) 14%, var(--background)) 35%, transparent 70%);
   filter: blur(20px);
   pointer-events: none;
   z-index: 0;
@@ -266,10 +276,10 @@ h1.eyebrow { line-height: 1.6; }
 .btn:active { transform: translateY(1px); }
 
 .btn-primary {
-  background: var(--text);
-  color: var(--white);
+  background: var(--cta);
+  color: var(--on-primary);
 }
-.btn-primary:hover { background: var(--primary-dark); }
+.btn-primary:hover { background: var(--action-pressed); }
 
 .btn-ghost {
   background: transparent;
@@ -297,7 +307,7 @@ h1.eyebrow { line-height: 1.6; }
   font-size: 0.98rem;
   letter-spacing: -0.005em;
   color: var(--text);
-  background: var(--white);
+  background: var(--card-fill);
   border: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
   border-radius: var(--radius-pill);
   padding: 14px 20px;
@@ -332,10 +342,10 @@ h1.eyebrow { line-height: 1.6; }
   text-align: left;
   max-height: 280px;
   overflow-y: auto;
-  background: var(--white);
+  background: var(--card-fill);
   border: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
   border-radius: 16px;
-  box-shadow: 0 12px 32px color-mix(in srgb, var(--text) 14%, transparent);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--ink-fixed) 14%, transparent);
 }
 .waitlist-place-list li {
   font-family: var(--sans);
@@ -389,7 +399,7 @@ h1.eyebrow { line-height: 1.6; }
   display: inline-block;
   margin: 0 0 1.25rem;
   padding: 10px 14px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   background: var(--primary-tint);
   border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
   font-size: 0.92rem;
@@ -492,8 +502,8 @@ h1.eyebrow { line-height: 1.6; }
   width: 73.6%;
   height: auto;
   border-radius: 30px;
-  border: 6px solid var(--text);
-  background: var(--text);
+  border: 6px solid var(--ink-fixed);
+  background: var(--ink-fixed);
   box-sizing: border-box;
 }
 @media (max-width: 480px) {
@@ -516,7 +526,7 @@ h1.eyebrow { line-height: 1.6; }
   justify-content: center;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: var(--white);
+  background: var(--card-fill);
   color: var(--text);
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
@@ -562,7 +572,7 @@ h1.eyebrow { line-height: 1.6; }
 .hero-glow {
   position: absolute;
   inset: -8%;
-  background: radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--brand-grad-hi) 55%, transparent) 0%, color-mix(in srgb, var(--brand-grad-mid) 22%, transparent) 35%, transparent 70%);
+  background: radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--brand-grad-hi) 55%, var(--background)) 0%, color-mix(in srgb, var(--brand-grad-mid) 22%, var(--background)) 35%, transparent 70%);
   filter: blur(40px);
   z-index: -1;
 }
@@ -572,15 +582,16 @@ h1.eyebrow { line-height: 1.6; }
 .section-prose { max-width: var(--maxw-prose); margin: 0 auto; }
 
 .section-cream { background: var(--background); }
-.section-paper { background: var(--white); }
+.section-paper { background: var(--card-fill); }
 .section-ink {
-  background: var(--text);
-  color: var(--border);
+  background: var(--band);
+  color: var(--on-band);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--text) 15%, var(--band)); /* invisible in light, a faint edge in dark */
 }
-.section-ink h2, .section-ink h3 { color: var(--background); }
-.section-ink p { color: var(--tab-inactive); }
-.section-ink .eyebrow { color: var(--tab-inactive); }
-.section-ink .eyebrow::before { background: var(--tab-inactive); }
+.section-ink h2, .section-ink h3 { color: var(--on-band); }
+.section-ink p { color: var(--on-band-muted); }
+.section-ink .eyebrow { color: var(--on-band-muted); }
+.section-ink .eyebrow::before { background: var(--on-band-muted); }
 
 .section-head {
   max-width: 760px;
@@ -591,7 +602,7 @@ h1.eyebrow { line-height: 1.6; }
   color: var(--text-secondary);
   margin: 0;
 }
-.section-ink .section-head p { color: var(--tab-inactive); }
+.section-ink .section-head p { color: var(--on-band-muted); }
 
 .pillars {
   display: grid;
@@ -611,7 +622,7 @@ h1.eyebrow { line-height: 1.6; }
   height: 52px;
   border-radius: 14px;
   background: var(--brand-gradient);
-  color: var(--text);
+  color: var(--on-gradient);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -714,21 +725,21 @@ h1.eyebrow { line-height: 1.6; }
 .trust-list li:last-child { border-bottom: 0; }
 .trust-list strong {
   display: block;
-  color: var(--background);
+  color: var(--on-band);
   font-weight: 500;
   margin-bottom: 4px;
   font-size: 1.02rem;
 }
-.trust-list span { color: var(--tab-inactive); font-size: 0.95rem; line-height: 1.55; }
-.trust-list svg { margin-top: 4px; color: var(--primary-light); }
+.trust-list span { color: var(--on-band-muted); font-size: 0.95rem; line-height: 1.55; }
+.trust-list svg { margin-top: 4px; color: var(--on-band-link); }
 
 .plus {
   background: linear-gradient(180deg, var(--background) 0%, var(--surface) 100%);
 }
 .plus-card {
-  background: var(--white);
+  background: var(--card-fill);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-2xl);
   padding: clamp(36px, 5vw, 56px);
   box-shadow: var(--shadow-card);
   display: grid;
@@ -744,7 +755,7 @@ h1.eyebrow { line-height: 1.6; }
   align-items: center;
   padding: 5px 12px;
   background: var(--brand-gradient);
-  color: var(--text);
+  color: var(--on-gradient);
   border-radius: var(--radius-pill);
   font-size: 0.78rem;
   font-weight: 600;
@@ -772,7 +783,7 @@ h1.eyebrow { line-height: 1.6; }
 
 .plus-price {
   background: var(--background);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-2xl);
   padding: 32px;
   text-align: center;
   border: 1px solid var(--border);
@@ -863,8 +874,9 @@ h1.eyebrow { line-height: 1.6; }
 .contact-item dd a:hover { color: var(--primary-dark); border-color: var(--primary-dark); text-decoration: none; }
 
 .site-footer {
-  background: var(--text);
-  color: var(--tab-inactive);
+  background: var(--band);
+  color: var(--on-band-muted);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--text) 15%, var(--band)); /* invisible in light, a faint edge in dark */
   padding: clamp(56px, 7vw, 88px) 28px clamp(36px, 4vw, 48px);
 }
 .footer-inner {
@@ -882,7 +894,7 @@ h1.eyebrow { line-height: 1.6; }
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--background);
+  color: var(--on-band);
   font-family: var(--serif);
   font-weight: 500;
   font-size: 1.2rem;
@@ -894,7 +906,7 @@ h1.eyebrow { line-height: 1.6; }
   border-radius: 7px;
 }
 .footer-tag {
-  color: var(--tab-inactive);
+  color: var(--on-band-muted);
   font-size: 0.92rem;
   max-width: 280px;
   line-height: 1.55;
@@ -902,7 +914,7 @@ h1.eyebrow { line-height: 1.6; }
 
 .footer-col h4 {
   font-family: var(--sans);
-  color: var(--tab-inactive);
+  color: var(--on-band-muted);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -916,7 +928,7 @@ h1.eyebrow { line-height: 1.6; }
   display: grid;
   gap: 10px;
 }
-.footer-col a { color: var(--border); font-size: 0.96rem; }
+.footer-col a { color: var(--on-band); font-size: 0.96rem; }
 .footer-col a:hover { color: var(--white); text-decoration: none; }
 
 .footer-bottom {
@@ -930,7 +942,7 @@ h1.eyebrow { line-height: 1.6; }
   gap: 16px;
   flex-wrap: wrap;
 }
-.footer-bottom p { color: var(--tab-inactive); font-size: 0.86rem; margin: 0; }
+.footer-bottom p { color: var(--on-band-muted); font-size: 0.86rem; margin: 0; }
 
 .legal-page main { padding: clamp(56px, 7vw, 96px) 28px clamp(72px, 9vw, 112px); }
 .legal-page h1 {
@@ -985,6 +997,7 @@ h1.eyebrow { line-height: 1.6; }
   padding: 2px 8px;
   border-radius: var(--radius-pill);
   background: var(--brand-gradient);
+  color: var(--on-gradient);
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -1029,7 +1042,7 @@ h1.eyebrow { line-height: 1.6; }
 .prose-list li strong { color: var(--text); font-weight: 600; }
 .text-link { color: var(--primary-dark); font-weight: 500; }
 /* On the dark Verification band the dark-blue link reads at about 2.9:1; use the light tint there. */
-.section-ink .text-link { color: var(--primary-light); }
+.section-ink .text-link { color: var(--on-band-link); }
 .section-ink .text-link:hover { color: var(--white); }
 
 /* Guide pages (/guides/): a single reading column. Every rule is scoped under .guide-body. */
