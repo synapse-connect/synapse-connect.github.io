@@ -1,11 +1,11 @@
 {
-  "version": "0.2.0",
-  "commit": "cf55368",
+  "version": "0.2.1",
+  "commit": "77b9102",
   "files": {
-    "ds/css/fonts.css": "79b0a58907ebe6b5943d41977cdca696521f43e5e4521c206baa7e839c115c10",
-    "ds/css/synapse.css": "a8c4cac905fca7b645f088ef863f8f7acf7f18e9fc212b9895c8327d1d329c42",
-    "ds/css/tokens.css": "161f8e3e02577a7800f1534cb00b9926c26d10b3ec00eb5a48d1c9a541b78561",
-    "ds/css/type.css": "1917812a8d2f9689c903fcbcfb496b9f2f16e695029ab008776a6f9df917609b",
+    "ds/css/fonts.css": "9fdc2947a5c934f167875237d76d2957e53f9baf135cbc7539a6a834c5c348ee",
+    "ds/css/synapse.css": "11a71bd3beffc9a4595465f599fcca6cc18d5abb9e0bf9ef565b462c6d53131c",
+    "ds/css/tokens.css": "d3a7124c57e2dacebd7969a589bf1860e40766140749f2be5813e2c81e44313d",
+    "ds/css/type.css": "93b74ff3c9ce6760b7b6cbf0d9f34f343ddf4726b85b6650596289f6226b6f55",
     "ds/fonts/SpaceMono-Regular.ttf": "4c322514d265062aa3f7fbd81f5b79391ccb74268e6a20600061e0ce33234f41",
     "ds/fonts/fraunces-latin-full-normal.woff2": "7e744849028e2219e2aa1bc467dc4032980dc4487c9c3da3010081cd72d3b103",
     "ds/fonts/inter-latin-400-normal.woff2": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
