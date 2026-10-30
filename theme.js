@@ -71,7 +71,10 @@
   window.addEventListener('pageshow', function (e) { if (e.persisted) apply(); });
 
   // Printed pages always use the light theme.
-  window.addEventListener('beforeprint', function () { root.setAttribute('data-theme', 'light'); });
+  window.addEventListener('beforeprint', function () {
+    root.setAttribute('data-theme', 'light');
+    root.style.colorScheme = 'light';
+  });
   window.addEventListener('afterprint', apply);
 
   apply();
