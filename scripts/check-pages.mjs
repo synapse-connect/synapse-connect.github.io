@@ -149,7 +149,15 @@ function checkTheme(file, html, tags) {
     }
   }
   if (holders.length !== 1 || !('hidden' in holders[0].attrs)) fail(file, 'the switch sits in one <li class="nav-theme" hidden>, shown by theme.js');
+
+  // The switch is hand-copied into every header: its markup must match the first page's exactly.
+  const markup = html.match(/<li class="nav-theme"[\s\S]*?<\/li>/)?.[0];
+  if (markup) {
+    switchMarkup ??= { file, markup };
+    if (markup !== switchMarkup.markup) fail(file, `the switch markup differs from ${switchMarkup.file}`);
+  }
 }
+let switchMarkup = null;
 
 const sitemapUrls = [...read('sitemap.xml').matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)].map((m) => m[1]);
 
@@ -220,7 +228,8 @@ if (existsSync(join(ROOT, 'waitlist.js'))) {
   }
 }
 
-if (/#[0-9a-fA-F]{3,8}\b|\brgba?\(/.test(read('style.css').replace(/\/\*[\s\S]*?\*\//g, ''))) fail('style.css', 'writes a colour value; colours come from /ds/css/tokens.css');
+const COLOUR_VALUE = /#[0-9a-fA-F]{3,8}\b|\b(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch)\(|:[^;{}]*(?<![-\w])(?:white|black|red|green|blue|gr[ae]y|silver|yellow|orange|purple|pink|navy|teal|maroon|olive|lime|aqua|fuchsia)\b/i;
+if (COLOUR_VALUE.test(read('style.css').replace(/\/\*[\s\S]*?\*\//g, ''))) fail('style.css', 'writes a colour value; colours come from /ds/css/tokens.css');
 
 if (failures.length) {
   console.error(failures.join('\n'));
