@@ -11,6 +11,9 @@
 }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
+/* Printed pages use the light theme even with JavaScript off: the design system's dark colours are
+   screen-only, and this keeps the browser's own controls light too (card #587). */
+@media print { :root, :root[data-theme="dark"] { color-scheme: light; } }
 
 * { box-sizing: border-box; }
 

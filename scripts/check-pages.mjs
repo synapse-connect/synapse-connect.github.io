@@ -234,6 +234,10 @@ const COLOUR_VALUE = /#[0-9a-fA-F]{3,8}\b|\b(?:rgba?|hsla?|hwb|lab|lch|oklab|okl
 const declarations = [...read('style.css').replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/\{([^{}]*)\}/g)].map((m) => m[1]);
 if (declarations.some((d) => COLOUR_VALUE.test(d))) fail('style.css', 'writes a colour value; colours come from /ds/css/tokens.css');
 
+// Printed pages use the light theme even with JavaScript off (card #587): the design system's dark
+// colours are screen-only, and the browser's own controls must print light too.
+if (!/@media\s+print\s*\{\s*[^{}]*\{[^}]*color-scheme:\s*light/.test(read('style.css'))) fail('style.css', 'needs @media print { … color-scheme: light } so printed pages stay light');
+
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
