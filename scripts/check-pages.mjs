@@ -151,8 +151,9 @@ function checkTheme(file, html, tags) {
   if (holders.length !== 1 || !('hidden' in holders[0].attrs)) fail(file, 'the switch sits in one <li class="nav-theme" hidden>, shown by theme.js');
 
   // The switch is hand-copied into every header: its markup must match the first page's exactly.
-  const markup = html.match(/<li\b[^>]*\bclass="nav-theme"[\s\S]*?<\/li>/)?.[0];
-  if (markup) {
+  const markup = html.match(/<li\b[^>]*\bclass="[^"]*\bnav-theme\b[^"]*"[\s\S]*?<\/li>/)?.[0];
+  if (!markup) fail(file, 'could not read the switch markup to compare it');
+  else {
     switchMarkup ??= { file, markup };
     if (markup !== switchMarkup.markup) fail(file, `the switch markup differs from ${switchMarkup.file}`);
   }
