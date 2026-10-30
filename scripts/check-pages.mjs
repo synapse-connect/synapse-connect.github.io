@@ -236,7 +236,7 @@ if (declarations.some((d) => COLOUR_VALUE.test(d))) fail('style.css', 'writes a 
 
 // Printed pages use the light theme even with JavaScript off (card #587): the design system's dark
 // colours are screen-only, and the browser's own controls must print light too.
-if (!/@media\s+print\s*\{[^@]*color-scheme:\s*light/.test(read('style.css'))) fail('style.css', 'needs @media print { … color-scheme: light } so printed pages stay light');
+if (!/@media\s+print\s*\{\s*[^{}]*\{[^}]*color-scheme:\s*light/.test(read('style.css'))) fail('style.css', 'needs @media print { … color-scheme: light } so printed pages stay light');
 
 if (failures.length) {
   console.error(failures.join('\n'));
