@@ -145,7 +145,7 @@
   function showShare(block) {
     block.innerHTML =
       '<div class="waitlist-done">' +
-        '<p class="waitlist-success">You’re on the list — check your inbox ✓</p>' +
+        '<p class="waitlist-success">You’re on the list ✓</p>' +
         '<p>Know someone in healthcare who’s done with the usual apps? Send them Synapse.</p>' +
         '<button class="btn btn-primary share-btn" type="button">Share with a coworker</button>' +
         '<p class="waitlist-status" role="status" aria-live="polite"></p>' +
