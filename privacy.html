@@ -49,7 +49,7 @@
     <div class="section-inner section-prose">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Last updated: October 24, 2026</p>
+      <p class="legal-meta">Last updated: November 11, 2026</p>
 
       <h2>1. Who we are</h2>
       <p>Synapse Connect LLC (&quot;Synapse,&quot; &quot;we,&quot; &quot;us&quot;) runs the Synapse dating app for healthcare workers. This policy explains what we collect, why, who we share it with, how long we keep it, and the choices you have. Contact: help@synapsematches.com.</p>
@@ -84,7 +84,7 @@
       <ul>
         <li>To run the app: create your profile, show it to potential matches, match you, and let you message.</li>
         <li>To verify you: check professional credentials and confirm you are the person on your ID.</li>
-        <li>To keep people safe: automatically screen new profile photos and prompt answers for explicit, violent or hateful content, review reports, hide or suspend accounts that break the rules, and prevent fraud and duplicate accounts.</li>
+        <li>To keep people safe: automatically screen new profile photos, prompt answers and the profile details you type in yourself, such as your hometown (not your name or role), for explicit, violent or hateful content, review reports, hide or suspend accounts that break the rules, and prevent fraud and duplicate accounts.</li>
         <li>To suggest date times and nearby date spots.</li>
         <li>To send notifications about matches and messages.</li>
         <li>To process purchases and keep the app working (fixing crashes).</li>
@@ -93,8 +93,8 @@
 
       <h2>4. Face matching and biometric information</h2>
       <p>To confirm you are the person on your ID, you can choose an automatic face match or a review by a person.</p>
-      <p>If you choose the face match and tick the consent box, we send your ID photo and selfie to Amazon Rekognition (Amazon Web Services), which measures the geometry of the faces to compare them. Some state laws, including Illinois, Texas and Washington law, treat this as biometric information. Synapse never stores the face measurements; we keep only the result (a match score and the decision). Amazon processes the images for us under its service terms. In the same step, Amazon Textract reads the first and last name printed on your ID so we can check that it matches your license record. We keep only that name, and delete it together with your ID photo.</p>
-      <p>Retention and destruction schedule: we delete your ID photo and selfie within 30 days of the verification decision, and in any case within 3 years of when you submitted them. Deleting your account deletes them immediately.</p>
+      <p>If you choose the face match and tick the consent box, we send your ID photo and selfie to Amazon Rekognition (Amazon Web Services), which measures the geometry of the faces to compare them. Some state laws, including Illinois, Texas and Washington law, treat this as biometric information. Synapse never stores the face measurements; we keep only the result: the match score, the decision and its reason, the expiry date read from your ID, and how much text appeared in your selfie and where (never the words). The person who reviews your verification gets them by email, kept in our team inbox. Amazon processes the images for us under its service terms. In the same step, Amazon Textract reads the first and last name printed on your ID so we can check that it matches your license record. We keep only that name, and delete it together with your ID photo.</p>
+      <p>Retention and destruction schedule: we delete your ID photo, selfie and any student ID photo within 30 days of the verification decision, within 30 days if you never finish verifying, and in any case within 3 years of when you submitted them. Deleting your account deletes them immediately.</p>
       <p>We never sell biometric information, share it with other members, or use it for anything else. You can withdraw face-match consent at any time in Settings; later checks then go to a person. If you choose review by a person, no face matching is used.</p>
 
       <h2>5. AI features</h2>
@@ -105,20 +105,22 @@
       <p>These providers process the data for us under their API terms and do not use it to train their models.</p>
 
       <h2>6. Who we share it with</h2>
-      <p>Other members see your profile: first name, age, occupation, city, photos, prompt answers, verification badge, approximate distance and the optional details you add (such as religion or political views, which are always optional). Some matching settings, such as your gender, what you&#x27;re looking for and who you want to see, are also available to other members&#x27; apps so matching works both ways. Other members never see your last name, exact location, ID, selfie, license details or schedule.</p>
+      <p>Other members see your profile: first name, age, occupation, city, photos, prompt answers, verification badge, approximate distance and the optional details you add (such as religion or political views, which are always optional). Some matching settings, such as your gender, what you&#x27;re looking for and who you want to see, are also available to other members&#x27; apps. Other members never see your last name, exact location, ID, selfie, license details or schedule.</p>
       <p>Service providers that process data for us:</p>
       <ul>
         <li>Supabase (database, sign-in, file storage, server functions), hosted on Amazon Web Services in the United States.</li>
-        <li>Amazon Web Services: Rekognition for face matching and Textract for reading the name on your ID (both only with your consent), and, with Comprehend, for screening new profile photos and prompt answers.</li>
+        <li>Amazon Web Services: Rekognition for face matching and Textract for reading the name on your ID (both only with your consent), and, with Comprehend, for screening new profile photos, prompt answers and the profile details you type in yourself, such as your hometown (not your name or role).</li>
         <li>Anthropic (conversation starters from your profile text and photos, only if you allow it, and license reading, only if you allow it).</li>
         <li>Google Places (date spot suggestions, using the midpoint between two approximate locations).</li>
         <li>Expo (push notifications and app updates).</li>
         <li>RevenueCat, Apple and Google (purchases and subscriptions).</li>
         <li>Sentry (crash reports).</li>
-        <li>Resend (emails: sign-in codes, and messages to our team with verification documents for review and safety reports).</li>
+        <li>Resend (emails: sign-in and school-email codes, waitlist and welcome emails, and messages to our team with verification documents for review and safety reports).</li>
         <li>OpenStreetMap (city search) and your phone&#x27;s maps service (turning location into a city name).</li>
         <li>Apple and Google sign-in, if you use them.</li>
+        <li>Google Drive (encrypted backup copies, which Google cannot read).</li>
       </ul>
+      <p>Our website is hosted by GitHub and uses Google Fonts and Cloudflare Web Analytics, which see your IP address when you visit.</p>
       <p>We may also disclose information if the law requires it, to protect someone&#x27;s safety, or as part of a merger or sale of the business (we would tell you first).</p>
 
       <h2>7. How long we keep it</h2>
@@ -126,12 +128,14 @@
         <li>Your account and profile: until you delete your account.</li>
         <li>Messages: until either person in the conversation deletes their account. Unmatching or blocking closes the chat for both people; the messages are kept as evidence in case of a report.</li>
         <li>ID photo and selfie: see the schedule in section 4.</li>
-        <li>Verification results, license details and reports: for the life of the account, to keep members safe.</li>
+        <li>Verification results and license details: for the life of the account. Reports: kept after either account is deleted, without the names, as a safety record.</li>
+        <li>If we suspend an account for breaking our rules, we keep a scrambled code made from its professional credential, which cannot be turned back into the credential. We use it only to spot the same credential on a new account, and delete it if the suspension is lifted.</li>
+        <li>For 30 days after a conversation ends, the other person can still see your first name in a list so they can report it.</li>
         <li>Activity days: for the life of the account.</li>
         <li>Crash reports: about 30 days. Server and email delivery logs: up to about 90 days.</li>
         <li>Waitlist: until you ask to be removed, or until you create an account.</li>
       </ul>
-      <p>When you delete your account in Settings, we delete your profile, photos, messages, matches, verification documents and consent records. We also keep encrypted backup copies of our systems for up to 14 days, so your data may remain in those backups for up to 14 days after you delete it. Copies of ID photos and selfies used for face matching are never kept in backups. Purchase records may remain with Apple, Google and RevenueCat under their own policies, and an anonymous record of a subscription cancellation reason may remain. Copies in database backups are deleted when the backup is deleted.</p>
+      <p>When you delete your account in Settings, we delete your profile, photos, messages, matches, verification documents and consent records. Reports and the suspension code described above are the exceptions. We also keep encrypted backup copies of our systems for up to 14 days, so your data may remain in those backups for up to 14 days after you delete it. Copies of ID photos and selfies used for face matching are never kept in backups. Purchase records may remain with Apple, Google and RevenueCat under their own policies, and an anonymous record of a subscription cancellation reason may remain. Copies in database backups are deleted when the backup is deleted.</p>
 
       <h2>8. Your choices and rights</h2>
       <ul>
