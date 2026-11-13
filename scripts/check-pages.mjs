@@ -16,6 +16,8 @@ const PAGES = [
   { file: 'pharmacists/index.html', url: 'https://synapsematches.com/pharmacists/' },
   { file: 'healthcare-students/index.html', url: 'https://synapsematches.com/healthcare-students/' },
   { file: 'guides/dating-with-12-hour-shifts/index.html', url: 'https://synapsematches.com/guides/dating-with-12-hour-shifts/' },
+  { file: 'child-safety/index.html', url: 'https://synapsematches.com/child-safety/' },
+  { file: 'delete-account/index.html', url: 'https://synapsematches.com/delete-account/' },
 ];
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
