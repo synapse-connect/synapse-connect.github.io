@@ -49,7 +49,7 @@
     <div class="section-inner section-prose">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Last updated: November 11, 2026</p>
+      <p class="legal-meta">Last updated: November 13, 2026</p>
 
       <h2>1. Who we are</h2>
       <p>Synapse Connect LLC (&quot;Synapse,&quot; &quot;we,&quot; &quot;us&quot;) runs the Synapse dating app for healthcare workers. This policy explains what we collect, why, who we share it with, how long we keep it, and the choices you have. Contact: help@synapsematches.com.</p>
@@ -93,7 +93,7 @@
 
       <h2>4. Face matching and biometric information</h2>
       <p>To confirm you are the person on your ID, you can choose an automatic face match or a review by a person.</p>
-      <p>If you choose the face match and tick the consent box, we send your ID photo and selfie to Amazon Rekognition (Amazon Web Services), which measures the geometry of the faces to compare them. Some state laws, including Illinois, Texas and Washington law, treat this as biometric information. Synapse never stores the face measurements; we keep only the result: the match score, the decision and its reason, the expiry date read from your ID, and how much text appeared in your selfie and where (never the words). The person who reviews your verification gets them by email, kept in our team inbox. Amazon processes the images for us under its service terms. In the same step, Amazon Textract reads the first and last name printed on your ID so we can check that it matches your license record. We keep only that name, and delete it together with your ID photo.</p>
+      <p>If you choose the face match and tick the consent box, we send your ID photo and selfie to Amazon Rekognition (Amazon Web Services), which measures the geometry of the faces to compare them. Some state laws, including Illinois, Texas and Washington law, treat this as biometric information. Synapse never stores the face measurements; we keep only the result: the match score, the decision and its reason, the expiry date read from your ID (the reason and the expiry date only for 30 days), and how much text appeared in your selfie and where (never the words). The person who reviews your verification gets them by email, kept in our team inbox. Amazon processes the images for us under its service terms. In the same step, Amazon Textract reads the first and last name printed on your ID so we can check that it matches your license record. We keep only that name, and delete it together with your ID photo.</p>
       <p>Retention and destruction schedule: we delete your ID photo, selfie and any student ID photo within 30 days of the verification decision, within 30 days if you never finish verifying, and in any case within 3 years of when you submitted them. Deleting your account deletes them immediately.</p>
       <p>We never sell biometric information, share it with other members, or use it for anything else. You can withdraw face-match consent at any time in Settings; later checks then go to a person. If you choose review by a person, no face matching is used.</p>
 
@@ -105,7 +105,7 @@
       <p>These providers process the data for us under their API terms and do not use it to train their models.</p>
 
       <h2>6. Who we share it with</h2>
-      <p>Other members see your profile: first name, age, occupation, city, photos, prompt answers, verification badge, approximate distance and the optional details you add (such as religion or political views, which are always optional). Some matching settings, such as your gender, what you&#x27;re looking for and who you want to see, are also available to other members&#x27; apps. Other members never see your last name, exact location, ID, selfie, license details or schedule.</p>
+      <p>Other members see your profile: first name, age, occupation, city, photos, prompt answers, verification badge, approximate distance and the optional details you add (such as religion or political views, which are always optional). Other members never see who you want to see, your last name, exact location, ID, selfie, license details or schedule.</p>
       <p>Service providers that process data for us:</p>
       <ul>
         <li>Supabase (database, sign-in, file storage, server functions), hosted on Amazon Web Services in the United States.</li>
@@ -127,20 +127,23 @@
       <ul>
         <li>Your account and profile: until you delete your account.</li>
         <li>Messages: until either person in the conversation deletes their account. Unmatching or blocking closes the chat for both people; the messages are kept as evidence in case of a report.</li>
+        <li>Chat photos, videos and voice notes: deleted 24 hours after they are opened, or after 30 days if never opened. While one person in a conversation has an open report about the other, they are kept until the report is closed, or while the reported account is suspended.</li>
         <li>ID photo and selfie: see the schedule in section 4.</li>
         <li>Verification results and license details: for the life of the account. Reports: kept after either account is deleted, without the names, as a safety record.</li>
         <li>If we suspend an account for breaking our rules, we keep a scrambled code made from its professional credential, which cannot be turned back into the credential. We use it only to spot the same credential on a new account, and delete it if the suspension is lifted.</li>
+        <li>If an account is deleted while a report about it is still open, we keep the same code, so that a person checks any new account with that credential. We delete it if we decide the report needs no action.</li>
+        <li>A record of each suspension (the account ID): while the suspension lasts, even after the account is deleted, and after it is lifted until the account is deleted.</li>
         <li>For 30 days after a conversation ends, the other person can still see your first name in a list so they can report it.</li>
         <li>Activity days: for the life of the account.</li>
-        <li>Crash reports: about 30 days. Server and email delivery logs: up to about 90 days.</li>
+        <li>Crash reports: about 30 days. Verification and content-screening logs: up to 1 year. Other server logs and email delivery logs: up to about 90 days.</li>
         <li>Waitlist: until you ask to be removed, or until you create an account.</li>
       </ul>
-      <p>When you delete your account in Settings, we delete your profile, photos, messages, matches, verification documents and consent records. Reports and the suspension code described above are the exceptions. We also keep encrypted backup copies of our systems for up to 14 days, so your data may remain in those backups for up to 14 days after you delete it. Copies of ID photos and selfies used for face matching are never kept in backups. Purchase records may remain with Apple, Google and RevenueCat under their own policies, and an anonymous record of a subscription cancellation reason may remain. Copies in database backups are deleted when the backup is deleted.</p>
+      <p>When you delete your account in Settings, we delete your profile, photos, messages, matches, verification documents and consent records. Reports, the credential code and the suspension record described above are the exceptions. We also keep encrypted backup copies of our systems for up to 14 days, so your data may remain in those backups for up to 14 days after you delete it. Copies of ID photos and selfies used for face matching are never kept in backups. Purchase records may remain with Apple, Google and RevenueCat under their own policies, and an anonymous record of a subscription cancellation reason may remain. Copies in database backups are deleted when the backup is deleted.</p>
 
       <h2>8. Your choices and rights</h2>
       <ul>
         <li>See and correct: most details can be edited in the app.</li>
-        <li>Delete: Settings → Delete Account.</li>
+        <li>Delete: Settings → Delete Account. Without the app, see <a href="/delete-account/">synapsematches.com/delete-account</a> to ask by email from the address you sign in with.</li>
         <li>Copy of your data: email us and we will send it within 30 days (45 days where state law allows).</li>
         <li>Withdraw consent: face matching and AI conversation starters can be turned off in Settings; location and notifications in your phone&#x27;s settings.</li>
         <li>Depending on where you live (for example California, Colorado, Connecticut, Virginia, or the EU/UK), you may have rights to know, access, correct, delete and port your data, and to limit the use of sensitive information. We do not sell or share data for targeted advertising, so there is nothing to opt out of there.</li>
@@ -191,6 +194,8 @@
           <li><a href="mailto:help@synapsematches.com">Contact</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="/child-safety/">Child safety</a></li>
+          <li><a href="/delete-account/">Delete your account</a></li>
         </ul>
       </div>
     </div>
